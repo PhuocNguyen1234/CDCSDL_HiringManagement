@@ -1,0 +1,122 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a06366d8-78f8-4c41-8c0e-20d05b68ea70" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Recruitment</ID>
+  <Name>Recruitment</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Recruitment</DataSourceID>
+  <Schema>
+    <xs:schema id="Recruitment" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Recruitment" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="959f0011-94b7-4be7-8834-699ed29851a5">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Candidate" msprop:design-time-name="695f26a3-19f4-4c47-94ae-abb6a0346f29" msprop:DbTableName="Candidate" msprop:FriendlyName="Candidate" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:design-time-name="5a27a2f3-31df-4b1e-b7f1-18e17d556eb0" msprop:DbColumnName="id" msprop:FriendlyName="id" type="xs:double" minOccurs="0" />
+                  <xs:element name="name" msprop:design-time-name="8acc00db-f34e-40a6-88e1-ae3c294f0851" msprop:DbColumnName="name" msprop:FriendlyName="name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="gender" msprop:design-time-name="7fa80e04-a439-448a-88f9-86dfcc97c407" msprop:DbColumnName="gender" msprop:FriendlyName="gender" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="age" msprop:design-time-name="6a869dfb-7cf9-4636-9cf1-bcd99ea89d77" msprop:DbColumnName="age" msprop:FriendlyName="age" type="xs:double" minOccurs="0" />
+                  <xs:element name="degree" msprop:design-time-name="815d411e-01aa-4837-a772-a72f3e5cfa24" msprop:DbColumnName="degree" msprop:FriendlyName="degree" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="stream" msprop:design-time-name="ee6ff9ff-4bc8-41ec-b3e2-a5bea8acb6b3" msprop:DbColumnName="stream" msprop:FriendlyName="stream" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="college_name" msprop:design-time-name="b5545fcf-6d74-4280-8f5a-68420ec7cf47" msprop:DbColumnName="college_name" msprop:FriendlyName="college_name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="placement_status" msprop:design-time-name="ac939be0-cc61-4564-ac9c-fb975976c0e1" msprop:DbColumnName="placement_status" msprop:FriendlyName="placement_status" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="salary" msprop:design-time-name="18304ba2-18e8-4c63-8cb0-693a1decc53f" msprop:DbColumnName="salary" msprop:FriendlyName="salary" type="xs:double" minOccurs="0" />
+                  <xs:element name="main_skills" msprop:design-time-name="2eef8e70-bfa1-4cb6-ab88-65704f138a35" msprop:DbColumnName="main_skills" msprop:FriendlyName="main_skills" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="projects_count" msprop:design-time-name="2066616b-5709-447e-8605-972ebae8a500" msprop:DbColumnName="projects_count" msprop:FriendlyName="projects_count" type="xs:double" minOccurs="0" />
+                  <xs:element name="gpa" msprop:design-time-name="93796908-e7cd-4716-9fc5-89af87377500" msprop:DbColumnName="gpa" msprop:FriendlyName="gpa" type="xs:double" minOccurs="0" />
+                  <xs:element name="years_of_experience" msprop:design-time-name="a5f48ae9-8802-4ca7-9355-7f4abd7bded4" msprop:DbColumnName="years_of_experience" msprop:FriendlyName="years_of_experience" type="xs:double" minOccurs="0" />
+                  <xs:element name="email" msprop:design-time-name="c18e8252-3b31-4e45-9080-7ab2d6a265bc" msprop:DbColumnName="email" msprop:FriendlyName="email" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <Recruitment xmlns="" />
+  </Schema>
+</DataSourceView>
