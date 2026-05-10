@@ -105,7 +105,7 @@ namespace Web_Recruitment_Management
                 {
                     lblStatus.Text = "Vui lòng chọn đầy đủ Trình độ và Lĩnh vực!";
                     lblStatus.CssClass = "status-badge fw-bold text-danger";
-                    litProb.Text = "ERR";
+                    lblPercentValue.InnerText = "ERR";
                     return;
                 }
 
@@ -144,7 +144,16 @@ namespace Web_Recruitment_Management
                     }
 
                     percentDT = (int)(Math.Round(probValue * 100));
-                    litProb.Text = $"{percentDT}%";
+                    string colorHex = "#dc3545"; // Mặc định Đỏ
+                    if (percentDT >= 75) colorHex = "#198754";      // Xanh lá
+                    else if (percentDT >= 50) colorHex = "#ffc107"; // Vàng
+
+                    // Gán con số và màu chữ
+                    lblPercentValue.InnerText = $"{percentDT}%";
+                    lblPercentValue.Style["color"] = colorHex;
+
+                    // Vẽ vòng tròn bằng CSS conic-gradient (quan trọng nhất)
+                    divCircleProgress.Style["background"] = $"conic-gradient({colorHex} {percentDT}%, #e9ecef {percentDT}%)";
 
                     if (lblDT_Compare != null) lblDT_Compare.Text = $"{percentDT}%";
 
@@ -325,7 +334,7 @@ namespace Web_Recruitment_Management
             {
                 lblStatus.Text = $"Lỗi thực thi Hệ thống: {ex.Message}";
                 lblStatus.CssClass = "status-badge fw-bold text-danger";
-                litProb.Text = "ERR";
+                lblPercentValue.InnerText = "ERR";
             }
         }
 
@@ -341,7 +350,7 @@ namespace Web_Recruitment_Management
                     probability = Convert.ToDouble(dt.Rows[0]["Prob"]) * 100;
                 }
 
-                litProb.Text = probability.ToString("0.00") + "%";
+                lblPercentValue.InnerText = probability.ToString("0.00") + "%";
 
                 lblProbability.Text = $"Độ phù hợp: {probability:0.00}%";
 
@@ -389,31 +398,44 @@ namespace Web_Recruitment_Management
                 string gender = ddlGender.SelectedValue;
                 string college = txtCollege.Text.Trim();
                 string email = txtEmail.Text.Trim();
-                int jobId = _xuly.LayIdJobTuStream(stream);
 
-                // ---> BỔ SUNG DÒNG NÀY: Lấy giá trị chuỗi kỹ năng từ giao diện <---
                 string skillsList = txtSkillsList.Text.Trim();
 
-                // Gọi hàm lưu database
-                bool success = _xuly.LuuUngVienMoi(name, gender, age, degree, stream, college, gpa, exp, projects, skills, email, status, cluster, skillsList);
+                bool success = false;
+
+                // --- PHẦN LOGIC QUAN TRỌNG NHẤT ---
+                // Kiểm tra nếu hdfReAppId có giá trị -> Đang ở chế độ CẬP NHẬT
+                if (!string.IsNullOrEmpty(hdfReAppId.Value))
+                {
+                    int appId = Convert.ToInt32(hdfReAppId.Value);
+                    int candidateId = Convert.ToInt32(hdfReCandidateId.Value);
+
+                    // Gọi hàm UPDATE (Hàm này bạn đã thêm vào lớp XuLyDuLieu ở bước trước)
+                    success = _xuly.CapNhatSauDanhGiaLai(appId, candidateId, name, gender, age, degree, stream, college, gpa, exp, projects, skills, email, status, cluster, skillsList);
+                }
+                else
+                {
+                    // Nếu không có ID -> Đang ở chế độ THÊM MỚI
+                    success = _xuly.LuuUngVienMoi(name, gender, age, degree, stream, college, gpa, exp, projects, skills, email, status, cluster, skillsList);
+                }
+                // ----------------------------------
 
                 if (success)
                 {
-                    // NẾU LƯU THÀNH CÔNG: Hiện thông báo và TỰ ĐỘNG CHUYỂN TRANG
+                    string msg = string.IsNullOrEmpty(hdfReAppId.Value) ? "Đã lưu thành công ứng viên mới" : "Đã cập nhật đánh giá AI thành công";
                     string script = $@"
-                        alert('Đã lưu thành công ứng viên vào cụm: {cluster}');
-                        window.location.href = 'CandidateList.aspx';
-                    ";
+                alert('{msg} vào cụm: {cluster}');
+                window.location.href = 'CandidateList.aspx';
+            ";
                     ClientScript.RegisterStartupScript(this.GetType(), "successSave", script, true);
                 }
                 else
                 {
-                    ShowAlert("Lưu thất bại! Có thể do lỗi câu lệnh SQL trong class XuLyDuLieu.");
+                    ShowAlert("Lưu thất bại! Hãy kiểm tra lại dữ liệu hoặc kết nối CSDL.");
                 }
             }
             catch (Exception ex)
             {
-                // Lúc này lỗi thật sự sẽ được hiện lên rõ ràng
                 ShowAlert($"Hệ thống báo lỗi: {ex.Message}");
             }
         }

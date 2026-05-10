@@ -10,6 +10,38 @@
         .result-box { background-color: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 25px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .prob-circle { width: 120px; height: 120px; border-radius: 50%; background: white; border: 8px solid #e2e8f0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: #ef4444; margin-bottom: 10px; }
         .status-badge { font-size: 1.5rem; margin: 15px 0; display: block; }
+        /* Thiết lập khung vòng tròn */
+        .circular-progress {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px auto;
+            /* Mặc định màu xám khi chưa phân tích */
+            background: conic-gradient(#e9ecef 0%, #e9ecef 100%); 
+            transition: background 0.5s ease;
+        }
+
+        /* Tạo lõi trắng ở giữa để biến vòng tròn đặc thành vòng nhẫn */
+        .circular-progress::before {
+            content: "";
+            position: absolute;
+            width: 114px;
+            height: 114px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        /* Con số phần trăm hiển thị ở giữa */
+        .progress-value {
+            position: relative;
+            font-size: 32px;
+            font-weight: 800;
+            color: #475569;
+        }
     </style>
 </asp:Content>
 
@@ -83,8 +115,8 @@
                                 <div class="result-box">
                                     <h5 class="text-secondary mb-4"><i class="fas fa-chart-pie me-2"></i>Đánh giá từ hệ thống</h5>
                                     
-                                    <div class="prob-circle">
-                                        <asp:Literal ID="litProb" runat="server" Text="--%"></asp:Literal>
+                                    <div id="divCircleProgress" runat="server" class="circular-progress">
+                                        <span id="lblPercentValue" runat="server" class="progress-value">--%</span>
                                     </div>
                                     <asp:Label ID="lblProbability" runat="server" Text="Tỉ lệ phù hợp: --%" CssClass="fw-bold text-danger"></asp:Label>
 

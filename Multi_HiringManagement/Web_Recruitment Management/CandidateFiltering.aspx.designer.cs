@@ -87,13 +87,22 @@ namespace Web_Recruitment_Management
         protected global::System.Web.UI.WebControls.Button btnAnalyze;
 
         /// <summary>
-        /// litProb control.
+        /// divCircleProgress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litProb;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCircleProgress;
+
+        /// <summary>
+        /// lblPercentValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPercentValue;
 
         /// <summary>
         /// lblProbability control.

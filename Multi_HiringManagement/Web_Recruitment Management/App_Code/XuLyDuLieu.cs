@@ -61,13 +61,11 @@ namespace Web_Recruitment_Management.App_Code
         {
             string ketQuaCachGoi = "Chưa xác định";
 
-            // 1. ÉP KIỂU SỐ THỰC (Bắt buộc phải có đuôi .0 để DMX không bị mù dữ liệu)
             string gpaStr = gpa.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
             string expStr = yearsOfExperience.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
             string projStr = projectsCount.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
             string skillStr = skillCount.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
 
-            // 2. Câu lệnh DMX truy vấn vào mô hình Clustering (Khớp 100% tên cột)
             string dmxQuery = $@"
                 SELECT Cluster() AS [Nhom_Ung_Vien]
                 FROM [ViewMiningCandidateData] 
@@ -102,7 +100,6 @@ namespace Web_Recruitment_Management.App_Code
             try
             {
                 Open();
-                // Tìm JobID dựa trên tên công việc khớp với Lĩnh vực (Stream)
                 string sql = "SELECT TOP 1 JobID FROM Dim_Jobs WHERE JobTitle = ?";
                 OleDbCommand cmd = new OleDbCommand(sql, CON);
                 cmd.Parameters.AddWithValue("JobTitle", streamName);
@@ -110,7 +107,6 @@ namespace Web_Recruitment_Management.App_Code
                 object obj = cmd.ExecuteScalar();
                 Close();
 
-                // Nếu tìm thấy thì trả về số ID, nếu không tìm thấy trả về 0
                 if (obj != null && obj != DBNull.Value)
                 {
                     return Convert.ToInt32(obj);
@@ -173,17 +169,15 @@ namespace Web_Recruitment_Management.App_Code
                 // 3. XỬ LÝ CHUỖI KỸ NĂNG (NẾU CÓ NHẬP)
                 if (!string.IsNullOrWhiteSpace(skillsList))
                 {
-                    // Tách chuỗi bằng dấu phẩy
                     string[] skillArray = skillsList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
                     foreach (string s in skillArray)
                     {
-                        string skillName = s.Trim(); // Xóa khoảng trắng thừa
+                        string skillName = s.Trim(); 
                         if (string.IsNullOrEmpty(skillName)) continue;
 
                         int skillId = 0;
 
-                        // A. Kiểm tra kỹ năng đã tồn tại trong Dim_Skills chưa?
                         string checkSql = "SELECT TOP 1 SkillID FROM Dim_Skills WHERE SkillName = ?";
                         OleDbCommand cmdCheck = new OleDbCommand(checkSql, CON, transaction);
                         cmdCheck.Parameters.AddWithValue("SkillName", skillName);
@@ -195,7 +189,6 @@ namespace Web_Recruitment_Management.App_Code
                         }
                         else
                         {
-                            // B. Nếu chưa có, Insert kỹ năng mới vào Dim_Skills
                             string insertSkill = "INSERT INTO Dim_Skills (SkillName, SkillGroup) VALUES (?, 'Other')";
                             OleDbCommand cmdInsertSkill = new OleDbCommand(insertSkill, CON, transaction);
                             cmdInsertSkill.Parameters.AddWithValue("SkillName", skillName);
@@ -205,7 +198,6 @@ namespace Web_Recruitment_Management.App_Code
                             skillId = Convert.ToInt32(cmdInsertSkill.ExecuteScalar());
                         }
 
-                        // C. Link ứng viên với kỹ năng vào Fact_Candidate_Skills
                         string insertFactSkill = "INSERT INTO Fact_Candidate_Skills (CandidateID, SkillID) VALUES (?, ?)";
                         OleDbCommand cmdFactSkill = new OleDbCommand(insertFactSkill, CON, transaction);
                         cmdFactSkill.Parameters.AddWithValue("CandidateID", newCandidateID);
@@ -214,7 +206,6 @@ namespace Web_Recruitment_Management.App_Code
                     }
                 }
 
-                // Xác nhận hoàn tất
                 transaction.Commit();
                 Close();
                 return true;
