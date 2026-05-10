@@ -27,6 +27,14 @@
       <Name>Candidate_Model_DT.dmm</Name>
       <FullPath>Candidate_Model_DT.dmm</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>ViewMiningCandidateData.dmm</Name>
+      <FullPath>ViewMiningCandidateData.dmm</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Candidate_Structure_LR.dmm</Name>
+      <FullPath>Candidate_Structure_LR.dmm</FullPath>
+    </ProjectItem>
   </MiningModels>
   <Configurations>
     <Configuration>

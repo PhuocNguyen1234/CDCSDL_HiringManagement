@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,45 @@ namespace Web_Recruitment_Management
         {
             if (!IsPostBack)
             {
+                // 1. Tải danh sách các tùy chọn cho DropDownList TRƯỚC TIÊN
                 LoadAllComboBoxes();
+
+                // 2. Kiểm tra xem có đang ở chế độ "Đánh giá lại" không (Dựa vào URL)
+                if (Request.QueryString["reAppId"] != null)
+                {
+                    string appId = Request.QueryString["reAppId"].ToString();
+                    DataTable dt = _xuly.LayDuLieuDeDanhGiaLai(Convert.ToInt32(appId));
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow row = dt.Rows[0];
+
+                        // Auto-fill ID ẩn
+                        hdfReAppId.Value = row["ApplicationID"].ToString();
+                        hdfReCandidateId.Value = row["CandidateID"].ToString();
+
+                        // Auto-fill TextBox
+                        txtName.Text = row["FullName"].ToString();
+                        txtEmail.Text = row["Email"].ToString();
+                        txtAge.Text = row["Age"].ToString();
+                        txtCollege.Text = row["College_Name"].ToString();
+                        txtGPA.Text = row["GPA"].ToString();
+                        txtExp.Text = row["Years_Of_Experience"].ToString();
+                        txtProjects.Text = row["Projects_Count"].ToString();
+                        txtSkillCount.Text = row["SkillCount"].ToString();
+                        txtSkillsList.Text = row["SkillsList"].ToString();
+
+                        // Auto-fill DropDownList (Dùng try...catch để né lỗi lỡ như dữ liệu cũ trong DB không khớp với danh sách Dropdown hiện tại)
+                        try { ddlGender.SelectedValue = row["Gender"].ToString(); } catch { }
+                        try { ddlDegree.SelectedValue = row["Degree"].ToString(); } catch { }
+                        try { ddlStream.SelectedValue = row["Stream"].ToString(); } catch { }
+
+                        // Đổi giao diện nút bấm sang chế độ Cập nhật
+                        btnSaveCandidate.Text = "CẬP NHẬT ĐÁNH GIÁ";
+                        btnSaveCandidate.CssClass = "btn btn-warning fw-bold text-dark";
+                        btnCancel.Visible = true; // Hiện nút Hủy
+                    }
+                }
             }
         }
 
@@ -51,19 +89,36 @@ namespace Web_Recruitment_Management
         {
             try
             {
+                // 1. LẤY VÀ CHUẨN HÓA DỮ LIỆU ĐẦU VÀO
                 string degree = ddlDegree.SelectedValue;
                 string stream = ddlStream.SelectedValue;
-                double gpa = double.TryParse(txtGPA.Text, out var g) ? g : 0;
+
+                double gpa = 0;
+                string gpaInput = txtGPA.Text.Replace(",", ".");
+                double.TryParse(gpaInput, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out gpa);
+
                 int exp = int.TryParse(txtExp.Text, out var ex) ? ex : 0;
                 int projects = int.TryParse(txtProjects.Text, out var p) ? p : 0;
+                int skills = int.TryParse(txtSkillCount.Text, out var s) ? s : 0;
 
                 if (degree == "0" || stream == "0")
                 {
-                    lblStatus.Text = "<span style='color:red'>Vui lòng chọn đầy đủ Trình độ và Lĩnh vực!</span>";
+                    lblStatus.Text = "Vui lòng chọn đầy đủ Trình độ và Lĩnh vực!";
+                    lblStatus.CssClass = "status-badge fw-bold text-danger";
+                    litProb.Text = "ERR";
                     return;
                 }
 
-                string dmx = $@"
+                string gpaStr = gpa.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
+                string expStr = exp.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
+                string projectsStr = projects.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
+
+                Web_Recruitment_Management.App_Code.XuLyDuLieu db = new Web_Recruitment_Management.App_Code.XuLyDuLieu();
+
+                // =========================================================
+                // AI SỐ 1: DECISION TREE
+                // =========================================================
+                string dmxDT = $@"
                 SELECT 
                     Predict([Placement Status]) AS [Result], 
                     PredictProbability([Placement Status], 'Placed') AS [Prob]
@@ -72,18 +127,205 @@ namespace Web_Recruitment_Management
                 (SELECT 
                     '{degree.Replace("'", "''")}' AS [Degree], 
                     '{stream.Replace("'", "''")}' AS [Stream],
-                    {gpa} AS [Gpa], 
-                    {exp} AS [Years Of Experience], 
-                    {projects} AS [Projects Count]
+                    {gpaStr} AS [Gpa], 
+                    {expStr} AS [Years Of Experience], 
+                    {projectsStr} AS [Projects Count]
                 ) AS t";
 
-                DataTable dt = _xuly.getPredicted(dmx);
+                DataTable dtDT = db.getPredicted(dmxDT);
+                int percentDT = 0;
 
-                DisplayResult(dt);
+                if (dtDT != null && dtDT.Rows.Count > 0)
+                {
+                    double probValue = 0;
+                    if (dtDT.Rows[0]["Prob"] != DBNull.Value)
+                    {
+                        probValue = Convert.ToDouble(dtDT.Rows[0]["Prob"]);
+                    }
+
+                    percentDT = (int)(Math.Round(probValue * 100));
+                    litProb.Text = $"{percentDT}%";
+
+                    if (lblDT_Compare != null) lblDT_Compare.Text = $"{percentDT}%";
+
+                    if (percentDT >= 50)
+                    {
+                        lblProbability.Text = $"Dự đoán: TRÚNG TUYỂN";
+                        lblProbability.CssClass = "fw-bold text-success";
+                    }
+                    else
+                    {
+                        lblProbability.Text = $"Dự đoán KHÔNG ĐẠT";
+                        lblProbability.CssClass = "fw-bold text-danger";
+                    }
+                }
+
+                // =========================================================
+                // AI SỐ 3: LOGISTIC REGRESSION (MÔ HÌNH SO SÁNH)
+                // =========================================================
+                string dmxLR = $@"
+                SELECT 
+                    Predict([Placement Status]) AS [Result], 
+                    PredictProbability([Placement Status], 'Placed') AS [Prob]
+                FROM [Candidate_LR] 
+                NATURAL PREDICTION JOIN
+                (SELECT 
+                    '{degree.Replace("'", "''")}' AS [Degree], 
+                    '{stream.Replace("'", "''")}' AS [Stream],
+                    {gpaStr} AS [Gpa], 
+                    {expStr} AS [Years Of Experience], 
+                    {projectsStr} AS [Projects Count]
+                ) AS t";
+
+                try
+                {
+                    DataTable dtLR = db.getPredicted(dmxLR);
+                    if (dtLR != null && dtLR.Rows.Count > 0)
+                    {
+                        double probLR = 0;
+                        if (dtLR.Rows[0]["Prob"] != DBNull.Value)
+                        {
+                            probLR = Convert.ToDouble(dtLR.Rows[0]["Prob"]);
+                        }
+
+                        int percentLR = (int)(Math.Round(probLR * 100));
+                        if (lblLR_Compare != null) lblLR_Compare.Text = $"{percentLR}%";
+
+                        // ---------------------------------------------------------
+                        // TÍNH TOÁN ĐỘNG: MỨC ĐỘ ẢNH HƯỞNG TỪNG TIÊU CHÍ
+                        // ---------------------------------------------------------
+                        double weightGPA = 0.45;
+                        double weightExp = 0.35;
+                        double weightProj = 0.20;
+
+                        double impactGPA = gpa * weightGPA;
+                        double impactExp = exp * weightExp;
+                        double impactProj = projects * weightProj;
+
+                        double totalImpact = impactGPA + impactExp + impactProj;
+
+                        if (totalImpact > 0 && litFeatureImpact != null)
+                        {
+                            int percentGPA = (int)Math.Round((impactGPA / totalImpact) * 100);
+                            int percentExp = (int)Math.Round((impactExp / totalImpact) * 100);
+                            int percentProj = 100 - percentGPA - percentExp;
+
+                            litFeatureImpact.Text = $@"
+                            <div class='mb-2 mt-2'>
+                                <div class='d-flex justify-content-between text-secondary mb-1' style='font-size: 0.8rem;'>
+                                    <span class='fw-semibold'>GPA</span>
+                                    <span class='fw-bold text-success'>{percentGPA}%</span>
+                                </div>
+                                <div class='progress' style='height: 8px;'>
+                                    <div class='progress-bar bg-success' role='progressbar' style='width: {percentGPA}%'></div>
+                                </div>
+                            </div>
+
+                            <div class='mb-2'>
+                                <div class='d-flex justify-content-between text-secondary mb-1' style='font-size: 0.8rem;'>
+                                    <span class='fw-semibold'>Kinh nghiệm</span>
+                                    <span class='fw-bold text-info'>{percentExp}%</span>
+                                </div>
+                                <div class='progress' style='height: 8px;'>
+                                    <div class='progress-bar bg-info' role='progressbar' style='width: {percentExp}%'></div>
+                                </div>
+                            </div>
+
+                            <div class='mb-1'>
+                                <div class='d-flex justify-content-between text-secondary mb-1' style='font-size: 0.8rem;'>
+                                    <span class='fw-semibold'>Dự án</span>
+                                    <span class='fw-bold text-warning'>{percentProj}%</span>
+                                </div>
+                                <div class='progress' style='height: 8px;'>
+                                    <div class='progress-bar bg-warning' role='progressbar' style='width: {percentProj}%'></div>
+                                </div>
+                            </div>";
+                        }
+                        else if (litFeatureImpact != null)
+                        {
+                            litFeatureImpact.Text = "<div class='progress-bar bg-secondary' style='width: 100%'>Chưa đủ dữ liệu tính toán</div>";
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    if (lblLR_Compare != null) lblLR_Compare.Text = "Đang cập nhật Model";
+                    if (litFeatureImpact != null) litFeatureImpact.Text = "<div class='progress-bar bg-secondary' style='width: 100%'>Đang cập nhật Model</div>";
+                }
+
+                // =========================================================
+                // AI SỐ 2: CLUSTERING 
+                // =========================================================
+                string rawCluster = db.DuDoanNhomUngVien(gpa, exp, stream, projects, skills);
+
+                string clusterName = "";
+                string cssClass = "";
+
+                // BỘ TỪ ĐIỂN DỊCH MÃ CLUSTER THÀNH TÊN ĐỊNH NGHĨA
+                switch (rawCluster.Trim())
+                {
+                    // --- NHÓM SĂN ĐÓN ---
+                    case "Cluster 8":
+                    case "Cluster 9":
+                        clusterName = "Senior - Dày dặn kinh nghiệm";
+                        cssClass = "status-badge fw-bold text-success border border-success";
+                        break;
+                    case "Cluster 10":
+                        clusterName = "Expert - Kỹ năng vượt trội";
+                        cssClass = "status-badge fw-bold text-success border border-success";
+                        break;
+
+                    // --- NHÓM TÀI NĂNG TRẺ ---
+                    case "Cluster 4":
+                        clusterName = "Fresher - IT Xuất Sắc";
+                        cssClass = "status-badge fw-bold text-primary";
+                        break;
+                    case "Cluster 5":
+                        clusterName = "Fresher - Kỹ thuật Xuất Sắc";
+                        cssClass = "status-badge fw-bold text-primary";
+                        break;
+
+                    // --- NHÓM THỰC CHIẾN / TIỀM NĂNG ---
+                    case "Cluster 7":
+                        clusterName = "Mid-level Thực chiến";
+                        cssClass = "status-badge fw-bold text-info";
+                        break;
+                    case "Cluster 3":
+                        clusterName = "Junior - Tiềm Năng";
+                        cssClass = "status-badge fw-bold text-info";
+                        break;
+                    case "Cluster 1":
+                        clusterName = "Ứng viên Phổ thông";
+                        cssClass = "status-badge fw-bold text-secondary";
+                        break;
+
+                    // --- NHÓM CẦN ĐÀO TẠO / CÂN NHẮC ---
+                    case "Cluster 6":
+                        clusterName = "Fresher - Tiêu Chuẩn";
+                        cssClass = "status-badge fw-bold text-warning";
+                        break;
+                    case "Cluster 2":
+                        clusterName = "Fresher - Cần đào tạo thêm";
+                        cssClass = "status-badge fw-bold text-warning border border-warning";
+                        break;
+
+                    default:
+                        clusterName = rawCluster != "Chưa xác định" ? rawCluster : "Chưa xác định";
+                        cssClass = "status-badge fw-bold text-dark";
+                        break;
+                }
+
+                lblStatus.Text = "Phân loại AI: " + clusterName;
+                lblStatus.CssClass = cssClass;
+
+                hdfCluster.Value = clusterName;
+                hdfStatus.Value = percentDT >= 50 ? "Placed" : "Not Placed";
             }
             catch (Exception ex)
             {
-                lblStatus.Text = $"<span style='color:orange'>Lỗi thực thi: </span>{ex.Message}";
+                lblStatus.Text = $"Lỗi thực thi Hệ thống: {ex.Message}";
+                lblStatus.CssClass = "status-badge fw-bold text-danger";
+                litProb.Text = "ERR";
             }
         }
 
@@ -115,7 +357,70 @@ namespace Web_Recruitment_Management
 
         private void ShowAlert(string message)
         {
-            Response.Write($"<script>alert('{message.Replace("'", "\\'")}');</script>");
+            string cleanMessage = message.Replace("'", "\\'").Replace("\n", "\\n").Replace("\r", "");
+            ClientScript.RegisterStartupScript(this.GetType(), "alertMessage", $"alert('{cleanMessage}');", true);
+        }
+
+        protected void btnSaveCandidate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cluster = hdfCluster.Value;
+                string status = hdfStatus.Value;
+
+                if (string.IsNullOrEmpty(cluster))
+                {
+                    ShowAlert("Vui lòng ấn Phân tích để AI đánh giá trước khi lưu!");
+                    return;
+                }
+
+                string degree = ddlDegree.SelectedValue;
+                string stream = ddlStream.SelectedValue;
+
+                double gpa = 0;
+                double.TryParse(txtGPA.Text.Replace(",", "."), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out gpa);
+
+                int exp = int.TryParse(txtExp.Text, out int ex) ? ex : 0;
+                int projects = int.TryParse(txtProjects.Text, out int p) ? p : 0;
+                int skills = int.TryParse(txtSkillCount.Text, out int s) ? s : 0;
+                double age = double.TryParse(txtAge.Text, out double ag) ? ag : 0;
+
+                string name = txtName.Text.Trim();
+                string gender = ddlGender.SelectedValue;
+                string college = txtCollege.Text.Trim();
+                string email = txtEmail.Text.Trim();
+                int jobId = _xuly.LayIdJobTuStream(stream);
+
+                // ---> BỔ SUNG DÒNG NÀY: Lấy giá trị chuỗi kỹ năng từ giao diện <---
+                string skillsList = txtSkillsList.Text.Trim();
+
+                // Gọi hàm lưu database
+                bool success = _xuly.LuuUngVienMoi(name, gender, age, degree, stream, college, gpa, exp, projects, skills, email, status, cluster, skillsList);
+
+                if (success)
+                {
+                    // NẾU LƯU THÀNH CÔNG: Hiện thông báo và TỰ ĐỘNG CHUYỂN TRANG
+                    string script = $@"
+                        alert('Đã lưu thành công ứng viên vào cụm: {cluster}');
+                        window.location.href = 'CandidateList.aspx';
+                    ";
+                    ClientScript.RegisterStartupScript(this.GetType(), "successSave", script, true);
+                }
+                else
+                {
+                    ShowAlert("Lưu thất bại! Có thể do lỗi câu lệnh SQL trong class XuLyDuLieu.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lúc này lỗi thật sự sẽ được hiện lên rõ ràng
+                ShowAlert($"Hệ thống báo lỗi: {ex.Message}");
+            }
+        }
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            // Bấm hủy thì quay lại danh sách
+            Response.Redirect("CandidateList.aspx");
         }
     }
 }

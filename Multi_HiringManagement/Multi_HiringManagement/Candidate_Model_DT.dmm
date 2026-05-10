@@ -1,4 +1,4 @@
-﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c7393449-e17a-4f7d-8063-2baa593b728d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8b2418a3-f545-46c5-b08d-bfa2e740d44e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Candidate_Model_DT</ID>
   <Name>Candidate_Model_DT</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -16,7 +16,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6721" scrolltop="-2993" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="17357" y="10986" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6721" scrolltop="-2993" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="17357" y="10986" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01a300009001b0300100065461686f6d61" />
             </font>
@@ -27,7 +27,7 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Candidate" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3874" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Candidate" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3874" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000220f000088130000" />
             </control>
@@ -72,229 +72,229 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="ca7763b1-052c-435f-bf27-35c54b4ac891">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="54918d66-8128-4a72-a2b0-17fb21be6b80">
     <DataSourceViewID>Recruitment</DataSourceViewID>
   </Source>
   <Columns>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d46b10c0-f640-4c41-87f2-588dc7d8961c">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1c198b08-fa98-414c-a8d9-304d2f6724da">
       <ID>Age</ID>
       <Name>Age</Name>
       <Type>Double</Type>
       <Content>Continuous</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="1504c18c-efff-4a44-9c02-a5defdd78653">
+        <KeyColumn dwd:design-time-name="3270d354-e05c-42dd-933e-182bfcd42d93">
           <DataType>Double</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="78962f10-b5b4-4a86-81e6-1368aa7723b4">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="19334b01-601d-4e0c-8b53-946e3f74904b">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>age</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="80b3e370-74a6-4950-b3b7-55c830b00126">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0eb7ac23-4ad3-4566-aa56-cc839f4d3b54">
       <ID>College Name</ID>
       <Name>College Name</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f7252ebe-2dd8-4c27-bf94-547c4ff56d16">
+        <KeyColumn dwd:design-time-name="350bec1f-e5f6-41f8-8b66-8fe953fe29d0">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="8d8a1c87-7958-46b0-869c-5ee720e79c96">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4bd52c0e-fd11-48f1-bb94-ed7e1a416a85">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>college_name</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="eedc090d-b572-4547-9d01-1ef0ee59cd8b">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="9e0a8649-2a62-4d5b-b641-fa29ca4ce431">
       <ID>Degree</ID>
       <Name>Degree</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="88948a2c-de50-4296-bfe2-22594ce6c6ac">
+        <KeyColumn dwd:design-time-name="77e0a1bf-4553-4b63-b632-6abbf4f420d1">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6176a9b0-87f4-42a5-931f-f507b438362c">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ac4c9dda-52ed-4502-861d-2ed2e8f1fbd0">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>degree</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="30e5f848-0b46-4b29-9152-63c2dbe29ff3">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b19de97b-d521-4fa2-a883-fcc60899b40e">
       <ID>Email</ID>
       <Name>Email</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="682f5233-afab-4071-9c23-2fff242ee7d6">
+        <KeyColumn dwd:design-time-name="3c764017-8bea-41e2-bdb3-0d9fa2f97f62">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1268d8ca-a268-4856-a8db-c289d519c5a0">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="afdbf5f9-7036-445f-af6c-3b885b47c3a0">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>email</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0dd34a64-109b-45ad-94dd-14503a0172d1">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a7364672-dd80-4312-a2c4-6fcbfbd50550">
       <ID>Gender</ID>
       <Name>Gender</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="01f3b7fd-89a3-4868-9bd4-5938e929cb1e">
+        <KeyColumn dwd:design-time-name="d13e5446-65fc-477c-846e-909ba4c28cab">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="78a97d30-d89b-4eb2-a206-f6fce3db8551">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cd18f500-f706-495c-a885-2b019356024e">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>gender</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="22caa105-762f-41e1-a9ef-2d6c8711e007">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="61f318e9-6d3c-4d92-a4fc-f5dac6a265bc">
       <ID>Gpa</ID>
       <Name>Gpa</Name>
       <Type>Double</Type>
       <Content>Continuous</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="e203a0e8-546e-41d9-bdbb-36720c7ac6cc">
+        <KeyColumn dwd:design-time-name="01714d1f-fb54-4743-87b3-a8bda66a8d27">
           <DataType>Double</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e9ebd494-c7f5-4eda-aebf-5023e289f591">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="02eae0b0-4a98-45a6-8f32-451ace0e9b3a">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>gpa</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d888a58f-8baa-413f-8326-6f95824f4985">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="237994a6-c3f0-45d1-ae18-965f748a4b37">
       <ID>Id</ID>
       <Name>Id</Name>
       <IsKey>true</IsKey>
       <Type>Double</Type>
       <Content>Key</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="05e37f1e-6556-4bb8-95c6-1911e514ab74">
+        <KeyColumn dwd:design-time-name="eba0644d-824b-4cc3-b0f1-ae0336902084">
           <DataType>Double</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="bc502e5f-7ed9-404e-9625-e3021c4efb55">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="37111b6c-fff5-482f-b591-de69e7f34a41">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>id</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="fefb9d4f-137a-499f-aa3f-416bc9f4f2cd">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6d6d8462-90c3-4ffe-a100-17f2f5102ba6">
       <ID>Main Skills</ID>
       <Name>Main Skills</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ce7c31a6-af3c-4456-96b8-179ae1f4c730">
+        <KeyColumn dwd:design-time-name="7ef80aae-2c18-472e-bfe7-c8517a22d6c0">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="0d1d811b-96fc-4e9f-9f82-270df14858aa">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6b0a51b3-8910-4002-9133-a4fc354ecff4">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>main_skills</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="8e2558eb-d38b-437c-9e5d-0ce60a664994">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6052c1d0-b1b1-465e-a9a1-92a9603dc5e3">
       <ID>Name</ID>
       <Name>Name</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="55576ad9-d100-44ec-8c34-61f04c37905e">
+        <KeyColumn dwd:design-time-name="4bbd9d40-2561-413d-b8a3-b43f9269ec47">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="5426b5ec-b301-4695-8d7b-fa1bc985bf51">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cb224ffd-2a3f-40a5-bd13-8d4a1ee7aa18">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>name</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a5265f21-6e41-4bca-b1b2-7efd8d1c2b62">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="195c1849-1627-4ac2-b1c1-29a6b9199382">
       <ID>Placement Status</ID>
       <Name>Placement Status</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="193bfdfc-d8aa-4943-a9b0-665096a4da1d">
+        <KeyColumn dwd:design-time-name="9e1a456f-894c-4709-8b17-93605a0dc7b6">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="fc9d3f5f-6c6b-444c-9891-7fc6303a2565">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c36d845d-9163-4114-abdb-d0ef58abf561">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>placement_status</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="56f20fa0-0241-423a-acf9-7ce5b2d73718">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7f124f02-c12e-42ad-9f91-9e8a864954da">
       <ID>Projects Count</ID>
       <Name>Projects Count</Name>
       <Type>Double</Type>
       <Content>Continuous</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="884fa15f-6187-4198-987b-5e75117c4f28">
+        <KeyColumn dwd:design-time-name="cee4c904-0ff1-4775-9ec3-e0ebe095aef4">
           <DataType>Double</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="7f00b752-e6e6-4f7b-ae86-ef4a1dda81ab">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="72808f41-83a2-4e8f-860e-48063889d455">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>projects_count</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="50196853-e6ac-443c-84ab-861042a60a85">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b34266ab-e87b-4354-92a4-46b8bc4c24e6">
       <ID>Salary</ID>
       <Name>Salary</Name>
       <Type>Double</Type>
       <Content>Continuous</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="390ca981-73d3-4ef9-9240-a4809f838d80">
+        <KeyColumn dwd:design-time-name="3378a50b-12a5-488e-b548-a37f8dd39bda">
           <DataType>Double</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="ae51590a-be76-4f49-b769-cb2deca24291">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1b00a07e-bad2-41c8-977f-9193ff4b9063">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>salary</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0f20a741-cbeb-4696-88d0-e0e94c670fa5">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b4e9e8dc-f3c1-4e4f-aa9d-1c3d895f14b2">
       <ID>Stream</ID>
       <Name>Stream</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7b5b1468-0a82-447c-ab6e-532ec04bf7ed">
+        <KeyColumn dwd:design-time-name="a8ace6bd-36ad-4c4b-9b4d-6ad50267b066">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="94542ec5-f8cc-4342-98c0-76d579837a64">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="78a8e171-d951-4c7e-8935-7b433f3fd6c9">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>stream</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="fbd0029f-a897-4643-8fe5-78e63deb4614">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ca4f8acd-2df6-4b5b-8110-e79bb4ba3595">
       <ID>Years Of Experience</ID>
       <Name>Years Of Experience</Name>
       <Type>Double</Type>
       <Content>Continuous</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0506f466-30a5-4148-9479-667a02a21314">
+        <KeyColumn dwd:design-time-name="47681143-5284-4ff3-9fc8-4ab38c0299a4">
           <DataType>Double</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="ee78a9df-0b60-4663-8c03-3c05fa832cff">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3d95fa3c-55fa-4bb2-b275-fdc5cc1ef04b">
             <TableID>dbo_Candidate</TableID>
             <ColumnID>years_of_experience</ColumnID>
           </Source>
@@ -303,7 +303,7 @@
     </Column>
   </Columns>
   <MiningModels>
-    <MiningModel dwd:design-time-name="e2049162-490d-4413-9986-de71233fcf04">
+    <MiningModel dwd:design-time-name="690def66-00e9-4a1d-90f4-c55c3dc636bb">
       <ID>Candidate 1</ID>
       <Name>Candidate 1</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -312,20 +312,12 @@
       <State>Unprocessed</State>
       <Algorithm>Microsoft_Decision_Trees</Algorithm>
       <Columns>
-        <Column dwd:design-time-name="45122216-5adc-41b3-8e24-a791aabf93b7">
-          <ID>Age</ID>
-          <Name>Age</Name>
-          <SourceColumnID>Age</SourceColumnID>
-          <ModelingFlags>
-            <ModelingFlag>REGRESSOR</ModelingFlag>
-          </ModelingFlags>
-        </Column>
-        <Column dwd:design-time-name="8892c4b5-f119-4d2d-af1c-0322e5b1ebd7">
+        <Column dwd:design-time-name="91dd84b0-aea0-45bb-82a1-f77960f711f6">
           <ID>Degree</ID>
           <Name>Degree</Name>
           <SourceColumnID>Degree</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="1ec639b7-df6e-4a53-9dfc-4b99216f4011">
+        <Column dwd:design-time-name="2eea610d-7105-4d35-9242-af5c23b7ec9e">
           <ID>Gpa</ID>
           <Name>Gpa</Name>
           <SourceColumnID>Gpa</SourceColumnID>
@@ -333,24 +325,19 @@
             <ModelingFlag>REGRESSOR</ModelingFlag>
           </ModelingFlags>
         </Column>
-        <Column dwd:design-time-name="749d878e-b9f1-4ff5-b5dd-e75f6f4c36ba">
+        <Column dwd:design-time-name="06b825aa-8ba5-446c-ac9b-4038d64f593c">
           <ID>Id</ID>
           <Name>Id</Name>
           <SourceColumnID>Id</SourceColumnID>
           <Usage>Key</Usage>
         </Column>
-        <Column dwd:design-time-name="0751381e-1358-434e-965d-f4ed5db88fb6">
-          <ID>Main Skills</ID>
-          <Name>Main Skills</Name>
-          <SourceColumnID>Main Skills</SourceColumnID>
-        </Column>
-        <Column dwd:design-time-name="66e4add4-32de-4a87-8fd0-e74bf31600f8">
+        <Column dwd:design-time-name="38988a4c-7731-4082-bc98-e59b605b299b">
           <ID>Placement Status</ID>
           <Name>Placement Status</Name>
           <SourceColumnID>Placement Status</SourceColumnID>
           <Usage>PredictOnly</Usage>
         </Column>
-        <Column dwd:design-time-name="9de62824-d96d-4e83-aba6-8239440271d3">
+        <Column dwd:design-time-name="d9f23270-89c6-4f79-b964-85628cbd8dbf">
           <ID>Projects Count</ID>
           <Name>Projects Count</Name>
           <SourceColumnID>Projects Count</SourceColumnID>
@@ -358,12 +345,12 @@
             <ModelingFlag>REGRESSOR</ModelingFlag>
           </ModelingFlags>
         </Column>
-        <Column dwd:design-time-name="19b61628-004a-405a-a5f8-df6f96d4e4fc">
+        <Column dwd:design-time-name="c1478176-a966-46a5-95ba-6153cd2131e9">
           <ID>Stream</ID>
           <Name>Stream</Name>
           <SourceColumnID>Stream</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="bcd3c69d-5139-4b6d-9c86-c0d4e71169c6">
+        <Column dwd:design-time-name="2a87f636-d548-4b40-84c7-6cc905a9e542">
           <ID>Years Of Experience</ID>
           <Name>Years Of Experience</Name>
           <SourceColumnID>Years Of Experience</SourceColumnID>

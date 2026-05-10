@@ -17,6 +17,12 @@
       <MiningStructure>
         <ID>Candidate_Model_DT</ID>
       </MiningStructure>
+      <MiningStructure>
+        <ID>ViewMiningCandidateData</ID>
+      </MiningStructure>
+      <MiningStructure>
+        <ID>Candidate_Structure_LR</ID>
+      </MiningStructure>
     </MiningStructures>
     <DataSourceImpersonationInfo>
       <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>

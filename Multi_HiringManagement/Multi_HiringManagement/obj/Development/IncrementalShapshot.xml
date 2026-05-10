@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>PXDBbyp+Edtnt4SvgWu28EuQHlc=4/30/2026 3:35:39 PM4/30/2026 3:35:38 PM</TimeStamp>
+        <TimeStamp>XGoPYI0lfwIuL2acBg1NEP+tgCg=5/5/2026 4:53:57 PM4/30/2026 3:35:38 PM</TimeStamp>
         <ID>
           <String>Recruitment</String>
         </ID>
@@ -40,9 +40,23 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>TxNOMQiuvEaSO8BM9FL6MnvPro4=4/30/2026 8:34:16 PM4/30/2026 3:52:40 PM</TimeStamp>
+        <TimeStamp>vOVpzu+JV+pIIC9I5H6Wk8f1R0k=5/9/2026 12:22:18 PM4/30/2026 3:52:40 PM</TimeStamp>
         <ID>
           <String>Candidate_Model_DT</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>GYi6q2u4Ow4jT09pCHXQIR3qJIc=5/9/2026 2:17:45 PM5/5/2026 4:53:57 PM</TimeStamp>
+        <ID>
+          <String>ViewMiningCandidateData</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>Gky+0yuBstyD2LNmfTg57ltZop8=5/9/2026 2:46:36 PM5/9/2026 2:46:36 PM</TimeStamp>
+        <ID>
+          <String>Candidate_Structure_LR</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -57,5 +71,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-05-03T12:59:28.97Z</LastDeployed>
+  <LastDeployed>2026-05-09T07:47:29.653333Z</LastDeployed>
 </DeploymentSnapshot>

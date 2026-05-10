@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{8C69E1AA-58A3-4EA8-94B8-4CC8E1B04F7B}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{DE082149-CCDF-494F-A066-7EC4C300C208}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5635,7 +5635,7 @@ where [refTable].[SkillName] = ?</property>
     design-time-name="Package\Dim_Candidates">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\Dim_Candidates\Sort"
@@ -5683,7 +5683,9 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5717,7 +5719,9 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5751,7 +5755,9 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5947,7 +5953,7 @@ where [refTable].[SkillName] = ?</property>
         <NodeLayout
           Size="178.4,41.6"
           Id="Package\Load_Fact_Applications\ADO NET Destination"
-          TopLeft="515.714294496848,257.705885967169" />
+          TopLeft="516.428580223298,257.705885967169" />
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Load_Fact_Applications\Lookup Candidates"
@@ -5958,9 +5964,9 @@ where [refTable].[SkillName] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-63.485715721091,64.694119137794"
+              EndConnector="-62.7714299946409,64.694119137794"
               Start="0,0"
-              End="-63.485715721091,57.194119137794">
+              End="-62.7714299946409,57.194119137794">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5971,20 +5977,20 @@ where [refTable].[SkillName] = ?</property>
                     Point2="0,32.347059568897"
                     Point3="-4,32.347059568897" />
                   <mssgle:LineSegment
-                    End="-59.485715721091,32.347059568897" />
+                    End="-58.7714299946409,32.347059568897" />
                   <mssgle:CubicBezierSegment
-                    Point1="-59.485715721091,32.347059568897"
-                    Point2="-63.485715721091,32.347059568897"
-                    Point3="-63.485715721091,36.347059568897" />
+                    Point1="-58.7714299946409,32.347059568897"
+                    Point2="-62.7714299946409,32.347059568897"
+                    Point3="-62.7714299946409,36.347059568897" />
                   <mssgle:LineSegment
-                    End="-63.485715721091,57.194119137794" />
+                    End="-62.7714299946409,57.194119137794" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-79.9342445792955,37.347059568897,96.3827734375,11.609375"
+              BoundingBox="-79.5771017160705,37.347059568897,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6055,7 +6061,7 @@ where [refTable].[SkillName] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6099,7 +6105,7 @@ where [refTable].[SkillName] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
