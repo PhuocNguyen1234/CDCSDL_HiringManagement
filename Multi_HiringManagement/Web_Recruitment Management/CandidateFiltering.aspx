@@ -10,7 +10,6 @@
         .result-box { background-color: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 25px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .prob-circle { width: 120px; height: 120px; border-radius: 50%; background: white; border: 8px solid #e2e8f0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: #ef4444; margin-bottom: 10px; }
         .status-badge { font-size: 1.5rem; margin: 15px 0; display: block; }
-        /* Thiết lập khung vòng tròn */
         .circular-progress {
             position: relative;
             width: 140px;
@@ -20,12 +19,10 @@
             justify-content: center;
             align-items: center;
             margin: 0 auto 15px auto;
-            /* Mặc định màu xám khi chưa phân tích */
             background: conic-gradient(#e9ecef 0%, #e9ecef 100%); 
             transition: background 0.5s ease;
         }
 
-        /* Tạo lõi trắng ở giữa để biến vòng tròn đặc thành vòng nhẫn */
         .circular-progress::before {
             content: "";
             position: absolute;
@@ -35,7 +32,6 @@
             background-color: #fff;
         }
 
-        /* Con số phần trăm hiển thị ở giữa */
         .progress-value {
             position: relative;
             font-size: 32px;

@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="CandidateFiltering.aspx" />
     <Content Include="CandidateList.aspx" />
+    <Content Include="FinalResultList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="CandidateList.aspx.designer.cs">
       <DependentUpon>CandidateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinalResultList.aspx.cs">
+      <DependentUpon>FinalResultList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalResultList.aspx.designer.cs">
+      <DependentUpon>FinalResultList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

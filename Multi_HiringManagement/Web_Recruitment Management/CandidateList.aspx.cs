@@ -33,7 +33,7 @@ namespace Web_Recruitment_Management
             gvCandidates.PageIndex = e.NewPageIndex;
             LoadData(ddlFilterCluster.SelectedValue, ddlFilterStatus.SelectedValue);
         }
-        private void LoadData(string clusterFilter, string statusFilter) // Thêm tham số statusFilter
+        private void LoadData(string clusterFilter, string statusFilter)
         {
             string sql = @"
                 SELECT 
@@ -52,23 +52,19 @@ namespace Web_Recruitment_Management
                 INNER JOIN Dim_Candidates c ON f.CandidateID = c.CandidateID
                 WHERE 1=1";
 
-            // 1. Điều kiện lọc theo cụm AI
             if (!string.IsNullOrEmpty(clusterFilter) && clusterFilter != "All")
             {
                 sql += $" AND f.AI_Cluster_Group = N'{clusterFilter}'";
             }
 
-            // 2. THÊM MỚI: Điều kiện lọc theo trạng thái kết quả
             if (!string.IsNullOrEmpty(statusFilter) && statusFilter != "All")
             {
                 if (statusFilter == "Placed")
                 {
-                    // Lấy những người có chữ Placed nhưng KHÔNG có chữ Not
                     sql += " AND f.Placement_Status LIKE '%Placed%' AND f.Placement_Status NOT LIKE '%Not%'";
                 }
                 else if (statusFilter == "Not Placed")
                 {
-                    // Lấy những người có chữ Not
                     sql += " AND f.Placement_Status LIKE '%Not%'";
                 }
             }
@@ -89,20 +85,16 @@ namespace Web_Recruitment_Management
         {
             if (e.CommandName == "DeleteRow")
             {
-                // Kiểm tra xem ID có lấy được không
                 int appId = Convert.ToInt32(e.CommandArgument);
 
-                // Thực hiện xóa
                 bool result = _xuly.XoaUngVien(appId);
 
                 if (result)
                 {
-                    // Load lại dữ liệu để cập nhật bảng ngay lập tức
                     LoadData(ddlFilterCluster.SelectedValue, ddlFilterStatus.SelectedValue);
                 }
                 else
                 {
-                    // Thông báo nếu có lỗi
                     Response.Write("<script>alert('Không thể xóa do ràng buộc dữ liệu!');</script>");
                 }
             }
@@ -115,7 +107,6 @@ namespace Web_Recruitment_Management
                 {
                     DataRow row = dt.Rows[0];
 
-                    // Đổ dữ liệu vào các ô TextBox
                     hdfEditAppId.Value = row["ApplicationID"].ToString();
                     hdfEditCandidateId.Value = row["CandidateID"].ToString();
                     txtEditName.Text = row["FullName"].ToString();
@@ -136,9 +127,28 @@ namespace Web_Recruitment_Management
             }
             else if (e.CommandName == "ReEvaluate")
             {
-                // Lấy ID và chuyển hướng sang trang Phân tích, kèm theo reAppId trên URL
                 string appId = e.CommandArgument.ToString();
                 Response.Redirect($"CandidateFiltering.aspx?reAppId={appId}");
+            }
+            else if (e.CommandName == "OpenFinalEval")
+            {
+                string appId = e.CommandArgument.ToString();
+
+                hdfFinalAppId.Value = appId;
+
+                string script = @"
+                    setTimeout(function() {
+                        if (typeof bootstrap !== 'undefined') {
+                            var myModal = new bootstrap.Modal(document.getElementById('finalEvalModal')); 
+                            myModal.show();
+                        } else if (window.jQuery) {
+                            $('#finalEvalModal').modal('show');
+                        } else {
+                            alert('Lỗi: Chưa tải được thư viện Bootstrap JS!');
+                        }
+                    }, 100);";
+
+                ClientScript.RegisterStartupScript(this.GetType(), "showFinalModal", script, true);
             }
         }
 
@@ -154,18 +164,15 @@ namespace Web_Recruitment_Management
                 string college = txtEditCollege.Text.Trim();
                 string skillsList = txtEditSkills.Text.Trim();
 
-                // Chuyển đổi dữ liệu số (xử lý dấu phẩy thập phân an toàn)
                 double gpa = 0;
                 double.TryParse(txtEditGPA.Text.Replace(",", "."), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out gpa);
                 int exp = int.TryParse(txtEditExp.Text, out int ex) ? ex : 0;
                 int projects = int.TryParse(txtEditProjects.Text, out int p) ? p : 0;
 
-                // Gọi hàm Update
                 bool success = _xuly.CapNhatUngVien(candidateId, appId, name, email, college, gpa, exp, projects, skillsList);
 
                 if (success)
                 {
-                    // Load lại bảng và gọi JS để đóng Modal
                     LoadData(ddlFilterCluster.SelectedValue, ddlFilterStatus.SelectedValue);
                     ClientScript.RegisterStartupScript(this.GetType(), "successEdit", "alert('Cập nhật thông tin thành công!');", true);
                 }
@@ -189,17 +196,36 @@ namespace Web_Recruitment_Management
             LoadData(ddlFilterCluster.SelectedValue, ddlFilterStatus.SelectedValue);
         }
 
+        protected void btnSaveFinal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int appId = Convert.ToInt32(hdfFinalAppId.Value);
+                string finalResult = ddlFinalResult.SelectedValue;
+
+                bool success = _xuly.CapNhatKetQuaCuoiCung(appId, finalResult);
+
+                if (success)
+                {
+                    LoadData(ddlFilterCluster.SelectedValue, ddlFilterStatus.SelectedValue);
+                    ClientScript.RegisterStartupScript(this.GetType(), "successFinal", "alert('Đã cập nhật Quyết định cuối cùng thành công!');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "errFinal", $"alert('Lỗi: {ex.Message}');", true);
+            }
+        }
+
         [WebMethod]
         public static string GetCandidateDetail(int applicationId)
         {
-            // Khởi tạo đối tượng xử lý (thay bằng tên lớp của bạn)
             XuLyDuLieu db = new XuLyDuLieu();
             DataTable dt = db.GetFullDetail(applicationId);
 
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
-                // Tạo chuỗi HTML để trả về hiển thị trong Modal
                 string html = $@"
                         <table class='table table-sm'>
                             <tr><th width='40%'>ID Ứng viên:</th><td>{row["CandidateID"]}</td></tr>
@@ -213,5 +239,6 @@ namespace Web_Recruitment_Management
             }
             return "Không tìm thấy thông tin.";
         }
+
     }
 }

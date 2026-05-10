@@ -17,10 +17,8 @@ namespace Web_Recruitment_Management
         {
             if (!IsPostBack)
             {
-                // 1. Tải danh sách các tùy chọn cho DropDownList TRƯỚC TIÊN
                 LoadAllComboBoxes();
 
-                // 2. Kiểm tra xem có đang ở chế độ "Đánh giá lại" không (Dựa vào URL)
                 if (Request.QueryString["reAppId"] != null)
                 {
                     string appId = Request.QueryString["reAppId"].ToString();
@@ -53,7 +51,7 @@ namespace Web_Recruitment_Management
                         // Đổi giao diện nút bấm sang chế độ Cập nhật
                         btnSaveCandidate.Text = "CẬP NHẬT ĐÁNH GIÁ";
                         btnSaveCandidate.CssClass = "btn btn-warning fw-bold text-dark";
-                        btnCancel.Visible = true; // Hiện nút Hủy
+                        btnCancel.Visible = true; 
                     }
                 }
             }
@@ -89,7 +87,6 @@ namespace Web_Recruitment_Management
         {
             try
             {
-                // 1. LẤY VÀ CHUẨN HÓA DỮ LIỆU ĐẦU VÀO
                 string degree = ddlDegree.SelectedValue;
                 string stream = ddlStream.SelectedValue;
 
@@ -148,11 +145,9 @@ namespace Web_Recruitment_Management
                     if (percentDT >= 75) colorHex = "#198754";      // Xanh lá
                     else if (percentDT >= 50) colorHex = "#ffc107"; // Vàng
 
-                    // Gán con số và màu chữ
                     lblPercentValue.InnerText = $"{percentDT}%";
                     lblPercentValue.Style["color"] = colorHex;
 
-                    // Vẽ vòng tròn bằng CSS conic-gradient (quan trọng nhất)
                     divCircleProgress.Style["background"] = $"conic-gradient({colorHex} {percentDT}%, #e9ecef {percentDT}%)";
 
                     if (lblDT_Compare != null) lblDT_Compare.Text = $"{percentDT}%";
@@ -270,7 +265,6 @@ namespace Web_Recruitment_Management
                 string clusterName = "";
                 string cssClass = "";
 
-                // BỘ TỪ ĐIỂN DỊCH MÃ CLUSTER THÀNH TÊN ĐỊNH NGHĨA
                 switch (rawCluster.Trim())
                 {
                     // --- NHÓM SĂN ĐÓN ---
@@ -403,22 +397,17 @@ namespace Web_Recruitment_Management
 
                 bool success = false;
 
-                // --- PHẦN LOGIC QUAN TRỌNG NHẤT ---
-                // Kiểm tra nếu hdfReAppId có giá trị -> Đang ở chế độ CẬP NHẬT
                 if (!string.IsNullOrEmpty(hdfReAppId.Value))
                 {
                     int appId = Convert.ToInt32(hdfReAppId.Value);
                     int candidateId = Convert.ToInt32(hdfReCandidateId.Value);
 
-                    // Gọi hàm UPDATE (Hàm này bạn đã thêm vào lớp XuLyDuLieu ở bước trước)
                     success = _xuly.CapNhatSauDanhGiaLai(appId, candidateId, name, gender, age, degree, stream, college, gpa, exp, projects, skills, email, status, cluster, skillsList);
                 }
                 else
                 {
-                    // Nếu không có ID -> Đang ở chế độ THÊM MỚI
                     success = _xuly.LuuUngVienMoi(name, gender, age, degree, stream, college, gpa, exp, projects, skills, email, status, cluster, skillsList);
                 }
-                // ----------------------------------
 
                 if (success)
                 {
@@ -441,7 +430,6 @@ namespace Web_Recruitment_Management
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            // Bấm hủy thì quay lại danh sách
             Response.Redirect("CandidateList.aspx");
         }
     }

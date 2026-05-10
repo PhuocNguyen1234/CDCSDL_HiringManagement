@@ -2,9 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        /* ---------------------------------------------------
-           CSS MỚI: Bọc bảng trong khung cuộn & Cố định Header 
-           --------------------------------------------------- */
         .table-scroll-wrapper {
             max-height: 550px; 
             overflow-y: auto;  
@@ -14,21 +11,16 @@
             position: relative; 
         }
         
-        /* Ghim Header bảng lên sát nóc khi cuộn */
         .table-scroll-wrapper thead th {
             position: sticky;
-            top: -1px; /* Kéo toàn bộ header lên 1 pixel để lấp khe hở */
+            top: -1px; 
             background-color: #212529; 
             color: white;
             z-index: 10;
             border-bottom: 2px solid #495057;
-            /* Phủ thêm một lớp viền ảo màu đen lên nóc để che kín hoàn toàn khe sáng */
             box-shadow: 0 -1px 0 #212529; 
         }
 
-        /* ---------------------------------------------------
-           CSS PHÂN TRANG (Đã sửa lỗi dọc & Ghim xuống đáy)
-           --------------------------------------------------- */
         .pagination-ys {
             position: sticky;
             bottom: -1px; 
@@ -42,20 +34,17 @@
             border-top: 2px solid #dee2e6;
         }
 
-        /* Căn giữa bảng phân trang */
         .pagination-ys table {
             margin: 0 auto; 
             border-collapse: separate;
             border-spacing: 6px 0; 
         }
 
-        /* Bắt buộc các ô chứa số nằm ngang */
         .pagination-ys table > tbody > tr > td {
             display: inline-block;
             padding: 0;
         }
 
-        /* Trang trí nút bấm chuẩn Bootstrap 5 */
         .pagination-ys table > tbody > tr > td > a,
         .pagination-ys table > tbody > tr > td > span {
             display: block; 
@@ -70,7 +59,6 @@
             transition: all 0.2s ease-in-out;
         }
 
-        /* Hiệu ứng khi di chuột vào nút */
         .pagination-ys table > tbody > tr > td > a:hover {
             color: #0a58ca; 
             background-color: #e9ecef; 
@@ -78,7 +66,6 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* Trang trí nút của Trang hiện tại đang đứng */
         .pagination-ys table > tbody > tr > td > span {
             color: #fff; 
             background-color: #0d6efd; 
@@ -202,6 +189,13 @@
                                         CommandArgument='<%# Eval("app_id") %>'>
                                         <i class="fas fa-robot"></i>
                                     </asp:LinkButton>
+                                    <asp:LinkButton ID="btnFinalEval" runat="server" 
+                                        CssClass="btn btn-sm btn-outline-success" 
+                                        ToolTip="Đánh giá cuối cùng"
+                                        CommandName="OpenFinalEval" 
+                                        CommandArgument='<%# Eval("app_id") %>'>
+                                        <i class="fas fa-check-circle"></i>
+                                    </asp:LinkButton>
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -283,11 +277,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function showDetail(appId) {
-            // Hiện modal sử dụng Vanilla JS Bootstrap 5
             var myModal = new bootstrap.Modal(document.getElementById('detailModal'));
             myModal.show();
 
-            // Gọi AJAX lấy dữ liệu
             $.ajax({
                 type: "POST",
                 url: "CandidateList.aspx/GetCandidateDetail",
@@ -303,4 +295,30 @@
             });
         }
     </script>
+
+    <div class="modal fade" id="finalEvalModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-gavel me-2"></i>Quyết Định Cuối Cùng</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="text-secondary mb-3">Vui lòng chọn kết quả cho hồ sơ này:</p>
+                    
+                    <asp:HiddenField ID="hdfFinalAppId" runat="server" />
+                    
+                    <asp:DropDownList ID="ddlFinalResult" runat="server" CssClass="form-select form-select-lg mb-3 border-dark fw-bold">
+                        <asp:ListItem Value="Pass" Text="🟢 PASS (Đạt)"></asp:ListItem>
+                        <asp:ListItem Value="Re-interview" Text="🟡 RE-INTERVIEW (PV Lại)"></asp:ListItem>
+                        <asp:ListItem Value="Fail" Text="🔴 FAIL (Loại)"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="modal-footer justify-content-center bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <asp:Button ID="btnSaveFinal" runat="server" Text="Xác nhận lưu" CssClass="btn btn-dark fw-bold" OnClick="btnSaveFinal_Click" />
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>

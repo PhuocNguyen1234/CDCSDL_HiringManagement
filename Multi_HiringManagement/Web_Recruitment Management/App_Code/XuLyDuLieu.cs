@@ -483,5 +483,26 @@ namespace Web_Recruitment_Management.App_Code
             }
             catch { if (transaction != null) transaction.Rollback(); Close(); return false; }
         }
+        public bool CapNhatKetQuaCuoiCung(int appId, string finalResult)
+        {
+            try
+            {
+                Open();
+                // Chỉ nhận Pass, Fail hoặc Re-interview
+                string sql = "UPDATE Fact_Applications SET Final_Result = ? WHERE ApplicationID = ?";
+                OleDbCommand cmd = new OleDbCommand(sql, CON);
+                cmd.Parameters.AddWithValue("FinalResult", finalResult);
+                cmd.Parameters.AddWithValue("AppId", appId);
+
+                int rows = cmd.ExecuteNonQuery();
+                Close();
+                return rows > 0; // Trả về true nếu cập nhật thành công
+            }
+            catch (Exception ex)
+            {
+                Close();
+                throw new Exception("Lỗi cập nhật Final Result: " + ex.Message);
+            }
+        }
     }
 }
