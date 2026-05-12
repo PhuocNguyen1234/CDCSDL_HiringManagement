@@ -1,4 +1,4 @@
-﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a072fed4-5eea-43ca-839b-1908dbb7f84e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="07252526-06aa-46df-b218-d050f51b646b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim_DT_AI_DMDSV</ID>
   <Name>Dim_DT_AI_DMDSV</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -34,29 +34,29 @@
   <DataSourceID>.</DataSourceID>
   <Schema>
     <xs:schema id="DIMENSION_CONTENT_SCHEMA" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
-      <xs:element name="DIMENSION_CONTENT_SCHEMA" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="4785fe42-1da7-4ae8-b862-42be8e04438c">
+      <xs:element name="DIMENSION_CONTENT_SCHEMA" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="0afcdd7d-5f88-4aa2-9ae3-7e7ac2f60dac">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="DIMENSION_CONTENT_ROWSET" msprop:QueryDefinition="SELECT * FROM [Model_DT_AI].DIMENSION_CONTENT" msprop:design-time-name="6833a419-ce0e-410e-bd0e-07ab6ae89bba">
+            <xs:element name="DIMENSION_CONTENT_ROWSET" msprop:QueryDefinition="SELECT * FROM [Model_DT_AI].DIMENSION_CONTENT" msprop:design-time-name="dbb15122-56bf-4b2f-a17f-4487c04277be">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="ATTRIBUTE_NAME" msprop:design-time-name="b933167d-79f1-4aee-bbcd-6649f2030aff" type="xs:string" minOccurs="0" />
-                  <xs:element name="NODE_NAME" msprop:design-time-name="f2333c7d-458a-493d-be6f-2a6d9a18ccb0" type="xs:string" minOccurs="0" />
-                  <xs:element name="NODE_TYPE" msprop:design-time-name="e36b4671-c9bf-4c47-9e9f-9711e64aa345" type="xs:int" minOccurs="0" />
-                  <xs:element name="NODE_GUID" msprop:design-time-name="6249561f-83c6-40c7-aa7d-97573265b730" type="xs:string" minOccurs="0" />
-                  <xs:element name="NODE_CAPTION" msprop:design-time-name="f762cd06-fdfe-404f-8316-020ae0861b2d" type="xs:string" minOccurs="0" />
-                  <xs:element name="CHILDREN_CARDINALITY" msprop:design-time-name="521919b7-c3f4-4da2-ab0c-b9c491bcd10d" type="xs:unsignedInt" minOccurs="0" />
-                  <xs:element name="PARENT_UNIQUE_NAME" msprop:design-time-name="fd5f80ad-b835-4e1c-83dc-2749b43da430" type="xs:string" minOccurs="0" />
-                  <xs:element name="NODE_DESCRIPTION" msprop:design-time-name="a8746261-2a26-4ef7-aafd-dc1022ac3e92" type="xs:string" minOccurs="0" />
-                  <xs:element name="NODE_RULE" msprop:design-time-name="e9ca38bb-925f-482d-a1aa-88b75ca494ab" type="xs:string" minOccurs="0" />
-                  <xs:element name="MARGINAL_RULE" msprop:design-time-name="18f4f72f-5c9c-4d6a-9654-4b2a2a5f45e9" type="xs:string" minOccurs="0" />
-                  <xs:element name="NODE_PROBABILITY" msprop:design-time-name="049257dd-48d9-41dd-a40a-16c661071d0e" type="xs:double" minOccurs="0" />
-                  <xs:element name="MARGINAL_PROBABILITY" msprop:design-time-name="be9a5ed9-e683-4034-afc4-7c0f91e429a6" type="xs:double" minOccurs="0" />
-                  <xs:element name="NODE_SUPPORT" msprop:design-time-name="f829b2b5-9867-4ce4-ba16-8b0b69aac49a" type="xs:double" minOccurs="0" />
-                  <xs:element name="MSOLAP_MODEL_COLUMN" msprop:design-time-name="612408bd-f7cf-4cbe-8557-f863c42b782d" type="xs:string" minOccurs="0" />
-                  <xs:element name="MSOLAP_NODE_SCORE" msprop:design-time-name="04e7b46e-5ae7-4dac-aa7b-919c75a22525" type="xs:double" minOccurs="0" />
-                  <xs:element name="MSOLAP_NODE_SHORT_CAPTION" msprop:design-time-name="ae9d4d15-30cf-45ff-b37e-83f902aa538b" type="xs:string" minOccurs="0" />
-                  <xs:element name="NODE_UNIQUE_NAME" msprop:design-time-name="4b0d8649-97de-427c-bc99-7dfd074639ca" type="xs:string" minOccurs="0" />
+                  <xs:element name="ATTRIBUTE_NAME" msprop:design-time-name="ba686c92-3292-437d-ab39-4b760793e3f7" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_NAME" msprop:design-time-name="164f4a85-3849-44dc-997e-91dd9db2a999" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_TYPE" msprop:design-time-name="49d43565-1c1b-4952-bcc8-a0b154ba5de3" type="xs:int" minOccurs="0" />
+                  <xs:element name="NODE_GUID" msprop:design-time-name="26f55e47-5578-4b02-9893-38989c9c992c" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_CAPTION" msprop:design-time-name="403faeee-44c3-41f7-95e3-a04b502cd051" type="xs:string" minOccurs="0" />
+                  <xs:element name="CHILDREN_CARDINALITY" msprop:design-time-name="1fbf4cc1-f7de-43e5-87f3-91eada97017b" type="xs:unsignedInt" minOccurs="0" />
+                  <xs:element name="PARENT_UNIQUE_NAME" msprop:design-time-name="dadfbeea-6099-4dec-8c3d-beebf9bd60bf" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_DESCRIPTION" msprop:design-time-name="89d6fae2-678e-4e9e-ab5b-2cb79230ff9f" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_RULE" msprop:design-time-name="1d2acd73-1ea7-4a0c-8a61-429f8a1af950" type="xs:string" minOccurs="0" />
+                  <xs:element name="MARGINAL_RULE" msprop:design-time-name="9b38105d-9b81-41ee-ba31-7ab8d93aa384" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_PROBABILITY" msprop:design-time-name="0bb85dd5-ea79-4da4-8987-fb2cfde3ec75" type="xs:double" minOccurs="0" />
+                  <xs:element name="MARGINAL_PROBABILITY" msprop:design-time-name="ba20bfe4-9534-461f-a895-d12f12dcdc9b" type="xs:double" minOccurs="0" />
+                  <xs:element name="NODE_SUPPORT" msprop:design-time-name="36957272-70ab-4b82-8621-b5ab7a9d6ee6" type="xs:double" minOccurs="0" />
+                  <xs:element name="MSOLAP_MODEL_COLUMN" msprop:design-time-name="2ee01a9c-9df7-44b7-8e85-7f8371b48288" type="xs:string" minOccurs="0" />
+                  <xs:element name="MSOLAP_NODE_SCORE" msprop:design-time-name="955f94ac-3e94-45d9-8b1b-e22f8bf0888d" type="xs:double" minOccurs="0" />
+                  <xs:element name="MSOLAP_NODE_SHORT_CAPTION" msprop:design-time-name="c4e136a4-f4d5-4b14-a225-eebd50468afc" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_UNIQUE_NAME" msprop:design-time-name="b6de772f-3abf-429e-b505-f73f076b987c" type="xs:string" minOccurs="0" />
                 </xs:sequence>
               </xs:complexType>
             </xs:element>

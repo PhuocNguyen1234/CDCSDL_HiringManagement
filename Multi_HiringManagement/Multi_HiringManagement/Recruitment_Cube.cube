@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="22" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-8199" scrolltop="-7323" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="68" x="18034" y="10033" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="22" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-8199" scrolltop="-7323" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="68" x="17547" y="9652" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01a300009001b0300100065461686f6d61" />
             </font>
@@ -334,6 +334,31 @@
         </Attribute>
       </Attributes>
     </Dimension>
+    <Dimension dwd:design-time-name="c71e43a6-7e9e-4b42-ba04-c43a7e0b3d11">
+      <ID>Dim_DT_AI</ID>
+      <Name>Dim_DT_AI</Name>
+      <DimensionID>Dim_DT_AI</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="de32444c-5c48-4630-819e-a2a395eb1b47">
+          <AttributeID>ATTRIBUTE_NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="217dfbb4-9fb0-4f2f-9740-59c659ec0db6">
+          <AttributeID>PARENT_UNIQUE_NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b23ef181-ddb2-4018-a5e1-2c9631756d58">
+          <AttributeID>NODE_RULE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e4da87b0-b7c8-404e-91fa-fddd9135182e">
+          <AttributeID>NODE_SUPPORT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f7df8cf7-d293-4509-b4b2-802b0e6ec286">
+          <AttributeID>NODE_UNIQUE_NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fbee29ca-ea62-4f8e-b3fa-e99a4411e99d">
+          <AttributeID>NODE CAPTION</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
   </Dimensions>
   <MeasureGroups>
     <MeasureGroup dwd:design-time-name="6e42b5a3-7842-4a0f-b7cb-50437865d1ef">
@@ -468,6 +493,10 @@
               <Type>Granularity</Type>
             </Attribute>
           </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DataMiningMeasureGroupDimension" dwd:design-time-name="00efa823-b0d9-4a21-980a-c56cc18b002f">
+          <CubeDimensionID>Dim_DT_AI</CubeDimensionID>
+          <CaseCubeDimensionID>Fact_Applications</CaseCubeDimensionID>
         </Dimension>
       </Dimensions>
       <Partitions />

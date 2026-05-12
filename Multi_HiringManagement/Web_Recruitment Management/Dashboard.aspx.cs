@@ -22,5 +22,15 @@ namespace Web_Recruitment_Management
             XuLyDuLieu dataHelper = new XuLyDuLieu();
             return dataHelper.GetPassPredictionByCollege();
         }
+
+        [WebMethod]
+        public static List<CollegeWeaknessResult> GetWeaknessData()
+        {
+            // Khởi tạo class chứa hàm truy vấn MDX
+            XuLyDuLieu xl = new XuLyDuLieu();
+
+            // Gọi hàm lấy dữ liệu điểm yếu mà chúng ta vừa viết lúc nãy
+            return xl.GetCollegeWeaknessAnalysis();
+        }
     }
 }

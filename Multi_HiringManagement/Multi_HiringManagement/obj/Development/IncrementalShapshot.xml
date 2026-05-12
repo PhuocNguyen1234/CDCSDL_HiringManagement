@@ -40,7 +40,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>ioeJloh/8oJZBDfkYsFyFe2nt2s=5/11/2026 11:57:25 PM5/11/2026 11:57:25 PM</TimeStamp>
+        <TimeStamp>rzH+7VSeY1e10bVK2V5L6fKQ5+k=5/12/2026 4:03:43 PM5/12/2026 4:03:43 PM</TimeStamp>
         <ID>
           <String>Dim_DT_AI_DMDSV</String>
         </ID>
@@ -68,23 +68,30 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>eepK3iI/4Mb9IweaHBAlQruoJJs=5/11/2026 11:15:09 PM5/11/2026 10:51:43 AM</TimeStamp>
+        <TimeStamp>eepK3iI/4Mb9IweaHBAlQruoJJs=5/12/2026 3:42:42 PM5/11/2026 10:51:43 AM</TimeStamp>
         <ID>
           <String>Dim_Jobs</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Mj1bYj9B4bzRq8bp1j3I/rJK4EQ=5/12/2026 12:02:32 AM5/11/2026 11:57:25 PM</TimeStamp>
+        <TimeStamp>0tUVuhLmNqDX9v6SsGn7vHf0b5Y=5/12/2026 4:25:41 PM5/12/2026 4:03:43 PM</TimeStamp>
         <ID>
           <String>Dim_DT_AI</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>+sJYuOB1c50HDAQUlDu31j90zgs=5/12/2026 3:24:54 PM5/11/2026 10:58:03 AMvMAjXe5Yn2GZGuF7U/wgqY2u5xc=5/11/2026 10:58:03 AM5/11/2026 10:58:03 AM</TimeStamp>
+        <TimeStamp>2LvqrZQIXxcO6tLaAHuZ1E6JrYg=5/12/2026 4:25:41 PM5/11/2026 10:58:03 AMvMAjXe5Yn2GZGuF7U/wgqY2u5xc=5/11/2026 10:58:03 AM5/11/2026 10:58:03 AM</TimeStamp>
         <ID>
           <String>Recruitment_Cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>CUUpgqwcYyi9KRupA4miHItnGoI=5/12/2026 4:04:59 PM5/12/2026 3:52:11 PM+trgV5nDS3tjfrh016dYyiKMEDE=5/12/2026 3:52:11 PM5/12/2026 3:52:11 PM</TimeStamp>
+        <ID>
+          <String>Cube_Data_For_AI</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
@@ -131,7 +138,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>/mAAnBeVVlHrBBcxvYckAn0gY4I=5/11/2026 11:57:25 PM5/11/2026 11:57:25 PM</TimeStamp>
+        <TimeStamp>2vG5+x3m91hRFbuZbwtJ2KEBML0=5/12/2026 4:03:43 PM5/12/2026 4:03:43 PM</TimeStamp>
         <ID>
           <String>Structure_DT_AI</String>
         </ID>
@@ -148,5 +155,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-05-12T08:32:36.7Z</LastDeployed>
+  <LastDeployed>2026-05-12T09:54:01.926667Z</LastDeployed>
 </DeploymentSnapshot>

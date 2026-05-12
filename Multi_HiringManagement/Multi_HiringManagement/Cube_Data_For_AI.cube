@@ -1,0 +1,305 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="58f3abd3-5ec5-44b6-9325-a3df03103c0d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cube_Data_For_AI</ID>
+  <Name>Cube_Data_For_AI</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="8ed1ad4f-1a13-4d14-9514-ab762c029c05">
+      <ID>Fact_Applications</ID>
+      <Name>Fact_Applications</Name>
+      <DimensionID>Fact_Applications</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="273fc082-ba4b-41cc-802f-5b052bce522b">
+          <AttributeID>Application ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e80822b6-e71a-4bb5-affa-eb09fcea1ebe">
+          <AttributeID>Candidate ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c5556fda-fbb4-4be7-8c46-35e3e54951c3">
+          <AttributeID>Job ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d3600b82-e18a-4691-87e0-670ab182612f">
+          <AttributeID>GPA</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2d8eae0f-ee5d-4c93-a416-399e9bf773c9">
+          <AttributeID>Projects Count</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="81a127ff-ef83-4808-8555-eda6f81aeb21">
+          <AttributeID>Years Of Experience</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a58c3f55-c0f0-4892-afc9-20b7b26a5db3">
+          <AttributeID>Placement Status</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="46c411fe-bbf4-41e5-bfbc-a0863ae7ff36">
+          <AttributeID>Prediction Probability</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6dfb4edd-ee7b-4778-b67b-2bae48edcb86">
+          <AttributeID>Final Result</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="46d78e1a-53f6-4313-9f02-c0e81982a9c4">
+          <AttributeID>Apply Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e17eeb4f-3795-46e7-8193-3b8a06557401">
+          <AttributeID>AI Cluster Group</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="45730260-9187-4ac0-bdac-aafadd337afc">
+          <AttributeID>Current Salary</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="8293baa9-1585-4649-a996-7896581c8a98">
+      <ID>Dim_Candidates</ID>
+      <Name>Dim_Candidates</Name>
+      <DimensionID>Dim_Candidates</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="217d5848-7ea2-47e7-b818-cd218d2c1533">
+          <AttributeID>Candidate ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="65690666-1734-44e7-92ba-efe5318eac5c">
+          <AttributeID>Full Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0ca86727-c73b-4b76-a0ad-cfd05a2f618f">
+          <AttributeID>Gender</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a56302f1-2d4a-49ba-8420-ef9bc7b7b3ed">
+          <AttributeID>Age</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0c973374-1e84-4037-9032-aebb59a257f3">
+          <AttributeID>Degree</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4e500f20-1a08-4b05-ad1a-01924b7e64bf">
+          <AttributeID>Stream</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9bf2e523-7283-4dba-ade8-0fba02a413bf">
+          <AttributeID>College Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="01367b74-b7a0-4f71-98a8-185ac612d80d">
+          <AttributeID>Email</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="e8726fb6-5ddb-4c3c-8055-0e8abbd5c240">
+      <ID>Job</ID>
+      <Name>Job</Name>
+      <DimensionID>Fact_Applications</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="196126ce-a02b-4e7a-8f43-b965cc2712f6">
+          <AttributeID>Application ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="71774a17-33d0-4d44-a85f-99d3813ea7b3">
+          <AttributeID>Candidate ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d1fa6651-bf15-4eaf-bf8d-a7044466420d">
+          <AttributeID>Job ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1d2f5ddb-30f2-4331-985b-4a0cf2792009">
+          <AttributeID>GPA</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="73557458-3c2f-44c4-a476-f55ae03a2742">
+          <AttributeID>Projects Count</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="158adb3e-a8fc-44ae-b4cb-bcfd35d72472">
+          <AttributeID>Years Of Experience</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e817ebad-8b3a-4250-a48a-a0244c2a0433">
+          <AttributeID>Placement Status</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2db9d2c5-12c7-4819-9e97-4ce73d3c5f39">
+          <AttributeID>Prediction Probability</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7870c18a-5078-486e-84ab-7895e4f56e79">
+          <AttributeID>Final Result</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d06d868e-a340-48ca-8254-897e8c43d219">
+          <AttributeID>Apply Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6bdad010-53f6-42e6-a414-c1fba0404902">
+          <AttributeID>AI Cluster Group</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fe206389-9f71-4da7-a213-22afb04f120e">
+          <AttributeID>Current Salary</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="c75b90d1-a344-49cc-b5a6-84251b99c173">
+      <ID>Fact Applications</ID>
+      <Name>Fact Applications</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="2c4af2a5-655f-4390-9ff6-c4b2f6e6f8f0">
+          <ID>GPA</ID>
+          <Name>GPA</Name>
+          <Source dwd:design-time-name="216c1a34-d8db-4c31-ab55-608209e2af48">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0595af66-f26a-4a7b-9ada-9ecb6343318d">
+              <TableID>dbo_Fact_Applications</TableID>
+              <ColumnID>GPA</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="62f6e76a-c555-4bee-a518-c22d0cd90a85">
+          <ID>Projects Count</ID>
+          <Name>Projects Count</Name>
+          <Source dwd:design-time-name="72e445c9-bda2-4375-bb3a-888ec6c4281d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7f299ee2-2f69-4917-8581-af8647760748">
+              <TableID>dbo_Fact_Applications</TableID>
+              <ColumnID>Projects_Count</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="43869909-84fd-4039-8edb-61f3df49088d">
+          <ID>Years Of Experience</ID>
+          <Name>Years Of Experience</Name>
+          <Source dwd:design-time-name="a41335d5-e003-4642-a60e-1cee618b4cef">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0d48ab45-9e6e-45c7-aaad-ac7d90ac8152">
+              <TableID>dbo_Fact_Applications</TableID>
+              <ColumnID>Years_Of_Experience</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a3fc65eb-d04c-45b4-b82d-1ebd1154961d">
+          <ID>Current Salary</ID>
+          <Name>Current Salary</Name>
+          <Source dwd:design-time-name="2f624da7-bfa2-42b9-927f-7b7009f4a917">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ea7db567-e106-44fe-99d5-edd5f32f516a">
+              <TableID>dbo_Fact_Applications</TableID>
+              <ColumnID>Current_Salary</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="91f42304-15a4-410e-acf8-a16293f808c9">
+          <ID>Prediction Probability</ID>
+          <Name>Prediction Probability</Name>
+          <Source dwd:design-time-name="3807c913-f6fb-4d82-8cdd-c02b532c7540">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e5140222-8bc1-4ca5-a12e-266a7c732d3f">
+              <TableID>dbo_Fact_Applications</TableID>
+              <ColumnID>Prediction_Probability</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b9bb901a-4a74-406f-95a7-9de65aca08a8">
+          <ID>Fact Applications Count</ID>
+          <Name>Fact Applications Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="40b178cd-bcdd-4929-9644-e4abb446d545">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="acf84f26-44e8-4e4c-88e7-b17a2cd4fd5d">
+              <TableID>dbo_Fact_Applications</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="5a6ec6ea-f344-4de6-bcff-d87ed3890dd0">
+          <CubeDimensionID>Fact_Applications</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ac864366-53c6-4c3c-a064-6822c492ab13">
+              <AttributeID>Application ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1903689f-61c6-4837-8003-e2063893c65f">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a44b5eec-714d-47ee-b733-c853e4699e27">
+                    <TableID>dbo_Fact_Applications</TableID>
+                    <ColumnID>ApplicationID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="56ec27c5-1ecc-449a-988e-40881dd92ead">
+          <CubeDimensionID>Dim_Candidates</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="3425fd96-18cb-4cad-a716-657d301cea48">
+              <AttributeID>Candidate ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="159692dc-8344-44e4-a227-511628a1fca2">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="98db124b-c79b-4f94-b30e-48923f6f125f">
+                    <TableID>dbo_Fact_Applications</TableID>
+                    <ColumnID>CandidateID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="95c9233f-e383-457d-9147-12cce56de25a">
+          <CubeDimensionID>Job</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bbb953ee-8956-44d5-a12a-c628c649e9d4">
+              <AttributeID>Application ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="89683b00-d5e1-4a21-9a5b-9ff55dd505c7">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="949a393f-820a-431d-b7c9-f4bb283f270d">
+                    <TableID>dbo_Fact_Applications</TableID>
+                    <ColumnID>ApplicationID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="3c7ce555-9f76-41f5-b26d-a6873b468812">
+    <DataSourceViewID>Recruitment_N</DataSourceViewID>
+  </Source>
+</Cube>

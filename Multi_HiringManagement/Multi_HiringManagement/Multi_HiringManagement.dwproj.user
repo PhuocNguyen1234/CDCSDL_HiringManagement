@@ -9,7 +9,7 @@
           <ObjectId></ObjectId>
           <ObjectType>Current</ObjectType>
         </StartObject>
-        <ProcessingOption>DoNotProcess</ProcessingOption>
+        <DeploymentMode>DeployAll</DeploymentMode>
       </Options>
     </Configuration>
   </Configurations>

@@ -7,6 +7,13 @@ using Microsoft.AnalysisServices.AdomdClient;
 
 namespace Web_Recruitment_Management.App_Code
 {
+    public class CollegeWeaknessResult
+    {
+        public string CollegeName { get; set; }
+        public string WeaknessRule { get; set; }
+        public int CandidateCount { get; set; }
+        public int TotalCount { get; set; }
+    }
     public class CollegePassResult
     {
         public string CollegeName { get; set; }
@@ -56,7 +63,6 @@ namespace Web_Recruitment_Management.App_Code
         {
             var resultList = new List<CollegePassResult>();
 
-            // Câu lệnh MDX: Lấy danh sách các trường và sắp xếp giảm dần theo số ứng viên Pass
             string mdxQuery = @"
                 SELECT 
                     { [Measures].[Fact Applications Count] } ON COLUMNS,
@@ -66,7 +72,7 @@ namespace Web_Recruitment_Management.App_Code
                             [Dim_Candidates].[College Name].Children,
                             [Measures].[Fact Applications Count],
                             DESC
-                        ) * [Dim_DT_AI].[Placement Status].[Pass]
+                        ) * [Fact_Applications].[Placement Status].[Placed]
                     } ON ROWS
                 FROM [Recruitment_Cube]";
 
@@ -78,10 +84,6 @@ namespace Web_Recruitment_Management.App_Code
                 {
                     foreach (DataRow row in dtKetQua.Rows)
                     {
-                        // Trong DataTable trả về từ MDX:
-                        // row[0] là Tên trường (College Name)
-                        // row[1] là Trạng thái (Pass)
-                        // row[2] là Số lượng (Measure)
 
                         resultList.Add(new CollegePassResult
                         {
@@ -96,6 +98,60 @@ namespace Web_Recruitment_Management.App_Code
                 throw new Exception("Lỗi lấy dữ liệu Dashboard: " + ex.Message);
             }
 
+            return resultList;
+        }
+
+        public List<CollegeWeaknessResult> GetCollegeWeaknessAnalysis()
+        {
+            var resultList = new List<CollegeWeaknessResult>();
+            string mdxQuery = @"
+                WITH MEMBER [Measures].[Total College Apps] AS
+                    Sum(
+                        [Dim_DT_AI].[Placement Status].CurrentMember.Siblings, 
+                        [Measures].[Fact Applications Count]
+                    )
+                SELECT 
+                    { [Measures].[Fact Applications Count], [Measures].[Total College Apps] } ON COLUMNS,
+                    NON EMPTY 
+                    {
+                        TopCount(
+                            [Dim_Candidates].[College Name].Children * [Dim_DT_AI].[Placement Status].Children,
+                            15,
+                            [Measures].[Fact Applications Count]
+                        )
+                    } ON ROWS
+                FROM [Recruitment_Cube]";
+
+            try
+            {
+                DataTable dt = this.getPredicted(mdxQuery);
+                if (dt != null)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string rawRule = row[1] != DBNull.Value ? row[1].ToString() : "";
+
+                        string friendlyRule = rawRule;
+                        if (rawRule.Contains("Projects Count < 2.1")) { friendlyRule = "Thiếu dự án thực tế (< 2 Project)"; }
+                        else if (rawRule.Contains("GPA <")) { friendlyRule = "Điểm trung bình (GPA) thấp"; }
+
+                        if (string.IsNullOrWhiteSpace(friendlyRule)) { friendlyRule = "Không xác định rõ"; }
+
+                        resultList.Add(new CollegeWeaknessResult
+                        {
+                            CollegeName = row[0] != DBNull.Value ? row[0].ToString() : "Chưa cập nhật",
+                            WeaknessRule = friendlyRule,
+                            CandidateCount = row[2] == DBNull.Value ? 0 : Convert.ToInt32(row[2]),
+
+                            TotalCount = row[3] == DBNull.Value ? 0 : Convert.ToInt32(row[3])
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi phân tích điểm yếu: " + ex.Message);
+            }
             return resultList;
         }
     }

@@ -17,6 +17,16 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Cube_Data_For_AI.cube</Name>
+      <FullPath>Cube_Data_For_AI.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Cube_Data_For_AI.partitions</Name>
+          <FullPath>Cube_Data_For_AI.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>

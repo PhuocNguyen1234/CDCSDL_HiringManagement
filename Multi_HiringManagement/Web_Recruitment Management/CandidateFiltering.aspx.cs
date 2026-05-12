@@ -28,11 +28,9 @@ namespace Web_Recruitment_Management
                     {
                         DataRow row = dt.Rows[0];
 
-                        // Auto-fill ID ẩn
                         hdfReAppId.Value = row["ApplicationID"].ToString();
                         hdfReCandidateId.Value = row["CandidateID"].ToString();
 
-                        // Auto-fill TextBox
                         txtName.Text = row["FullName"].ToString();
                         txtEmail.Text = row["Email"].ToString();
                         txtAge.Text = row["Age"].ToString();
@@ -43,12 +41,10 @@ namespace Web_Recruitment_Management
                         txtSkillCount.Text = row["SkillCount"].ToString();
                         txtSkillsList.Text = row["SkillsList"].ToString();
 
-                        // Auto-fill DropDownList (Dùng try...catch để né lỗi lỡ như dữ liệu cũ trong DB không khớp với danh sách Dropdown hiện tại)
                         try { ddlGender.SelectedValue = row["Gender"].ToString(); } catch { }
                         try { ddlDegree.SelectedValue = row["Degree"].ToString(); } catch { }
                         try { ddlStream.SelectedValue = row["Stream"].ToString(); } catch { }
 
-                        // Đổi giao diện nút bấm sang chế độ Cập nhật
                         btnSaveCandidate.Text = "CẬP NHẬT ĐÁNH GIÁ";
                         btnSaveCandidate.CssClass = "btn btn-warning fw-bold text-dark";
                         btnCancel.Visible = true; 
@@ -113,7 +109,7 @@ namespace Web_Recruitment_Management
                 Web_Recruitment_Management.App_Code.XuLyDuLieu db = new Web_Recruitment_Management.App_Code.XuLyDuLieu();
 
                 // =========================================================
-                // AI SỐ 1: DECISION TREE
+                // DECISION TREE
                 // =========================================================
                 string dmxDT = $@"
                 SELECT 
@@ -165,7 +161,7 @@ namespace Web_Recruitment_Management
                 }
 
                 // =========================================================
-                // AI SỐ 3: LOGISTIC REGRESSION (MÔ HÌNH SO SÁNH)
+                // LOGISTIC REGRESSION (MÔ HÌNH SO SÁNH)
                 // =========================================================
                 string dmxLR = $@"
                 SELECT 
@@ -258,7 +254,7 @@ namespace Web_Recruitment_Management
                 }
 
                 // =========================================================
-                // AI SỐ 2: CLUSTERING 
+                // CLUSTERING 
                 // =========================================================
                 string rawCluster = db.DuDoanNhomUngVien(gpa, exp, stream, projects, skills);
 

@@ -53,7 +53,6 @@ namespace Web_Recruitment_Management.App_Code
                 Open();
                 transaction = CON.BeginTransaction();
 
-                // 1. CHÈN VÀO DIM_CANDIDATES
                 string sqlDim = "INSERT INTO Dim_Candidates (FullName, Gender, Age, Degree, Stream, College_Name, Email) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 OleDbCommand cmdDim = new OleDbCommand(sqlDim, CON, transaction);
                 cmdDim.Parameters.AddWithValue("FullName", name ?? (object)DBNull.Value);
@@ -68,7 +67,6 @@ namespace Web_Recruitment_Management.App_Code
                 cmdDim.CommandText = "SELECT @@IDENTITY";
                 int newCandidateID = Convert.ToInt32(cmdDim.ExecuteScalar());
 
-                // 2. CHÈN VÀO FACT_APPLICATIONS 
                 string sqlFact = @"INSERT INTO Fact_Applications (CandidateID, GPA, Projects_Count, Years_Of_Experience, Placement_Status, Prediction_Probability, AI_Cluster_Group, Final_Result, ApplyDate)
                                    VALUES (?, ?, ?, ?, ?, ?, ?, NULL, GETDATE())";
                 OleDbCommand cmdFact = new OleDbCommand(sqlFact, CON, transaction);
@@ -81,7 +79,6 @@ namespace Web_Recruitment_Management.App_Code
                 cmdFact.Parameters.AddWithValue("AIClusterGroup", clusterName);
                 cmdFact.ExecuteNonQuery();
 
-                // 3. XỬ LÝ CHUỖI KỸ NĂNG (NẾU CÓ NHẬP)
                 if (!string.IsNullOrWhiteSpace(skillsList))
                 {
                     string[] skillArray = skillsList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
