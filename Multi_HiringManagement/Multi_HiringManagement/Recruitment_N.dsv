@@ -1,0 +1,251 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="bac8cc7f-7d75-4594-8716-eb58936e51bc" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Recruitment_N</ID>
+  <Name>Recruitment_N</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Recruitment</DataSourceID>
+  <Schema>
+    <xs:schema id="Recruitment_N" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Recruitment_N" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="e6632f9d-0be4-480c-9ec3-86baab5b62e0">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Dim_Candidates" msprop:design-time-name="535e3c6e-d936-4e5f-bede-ad3a6de7c82a" msprop:FriendlyName="Dim_Candidates" msprop:DbSchemaName="dbo" msprop:DbTableName="Dim_Candidates" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CandidateID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="20eceba6-b6e4-4090-82af-c61ceb1d3d05" msprop:DbColumnName="CandidateID" msprop:FriendlyName="CandidateID" type="xs:int" />
+                  <xs:element name="FullName" msprop:design-time-name="81df9930-892b-4480-8797-04549930c77c" msprop:DbColumnName="FullName" msprop:FriendlyName="FullName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Gender" msprop:design-time-name="6dc8030f-6aea-4b43-b30d-20897573515f" msprop:DbColumnName="Gender" msprop:FriendlyName="Gender" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Age" msprop:design-time-name="9152c7b0-1714-43a6-a33d-c6eefecd9104" msprop:DbColumnName="Age" msprop:FriendlyName="Age" type="xs:double" minOccurs="0" />
+                  <xs:element name="Degree" msprop:design-time-name="fe632c6b-abb8-4afd-bc4a-6bff876c9c4e" msprop:DbColumnName="Degree" msprop:FriendlyName="Degree" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Stream" msprop:design-time-name="79e2e8ad-d3bc-49bf-9f63-f38b2fe89374" msprop:DbColumnName="Stream" msprop:FriendlyName="Stream" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="College_Name" msprop:design-time-name="f089ffb7-2946-41e3-9820-ec9ccb0825e7" msprop:DbColumnName="College_Name" msprop:FriendlyName="College_Name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Email" msprop:design-time-name="3d9548bf-92b6-4037-b5da-184fa3369416" msprop:DbColumnName="Email" msprop:FriendlyName="Email" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Fact_Applications" msprop:design-time-name="7c1e4bf2-a89c-42be-80cd-cca51459d5e9" msprop:FriendlyName="Fact_Applications" msprop:DbSchemaName="dbo" msprop:DbTableName="Fact_Applications" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ApplicationID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="d491f6c4-b7a8-47dd-9b5e-b0fcae2b89b3" msprop:DbColumnName="ApplicationID" msprop:FriendlyName="ApplicationID" type="xs:int" />
+                  <xs:element name="CandidateID" msprop:design-time-name="848ce8cb-3491-45ad-9478-cea2907939b1" msprop:DbColumnName="CandidateID" msprop:FriendlyName="CandidateID" type="xs:int" />
+                  <xs:element name="JobID" msprop:design-time-name="a30d327a-5d97-4c94-ba49-775bc41dcf1c" msprop:DbColumnName="JobID" msprop:FriendlyName="JobID" type="xs:int" minOccurs="0" />
+                  <xs:element name="GPA" msprop:design-time-name="dce0ad7c-2ba0-4872-8ca2-01ac1a50e4a8" msprop:DbColumnName="GPA" msprop:FriendlyName="GPA" type="xs:double" minOccurs="0" />
+                  <xs:element name="Projects_Count" msprop:design-time-name="4f8320ee-7e80-431b-a0c1-a89477001a97" msprop:DbColumnName="Projects_Count" msprop:FriendlyName="Projects_Count" type="xs:double" minOccurs="0" />
+                  <xs:element name="Years_Of_Experience" msprop:design-time-name="c7109e26-0bf4-420f-9b94-76542750a247" msprop:DbColumnName="Years_Of_Experience" msprop:FriendlyName="Years_Of_Experience" type="xs:double" minOccurs="0" />
+                  <xs:element name="Current_Salary" msprop:design-time-name="2336e2cb-a316-466b-8ea8-cb26da00c265" msprop:DbColumnName="Current_Salary" msprop:FriendlyName="Current_Salary" type="xs:double" minOccurs="0" />
+                  <xs:element name="Placement_Status" msprop:design-time-name="039b1359-8704-432b-97dc-dbc515969e29" msprop:DbColumnName="Placement_Status" msprop:FriendlyName="Placement_Status" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Prediction_Probability" msprop:design-time-name="f1dfd7a3-438b-4ebd-9c6e-ba0eb6072c2b" msprop:DbColumnName="Prediction_Probability" msprop:FriendlyName="Prediction_Probability" type="xs:double" minOccurs="0" />
+                  <xs:element name="Final_Result" msprop:design-time-name="584dacc5-33a0-466f-8e92-cc2bbffa13ce" msprop:DbColumnName="Final_Result" msprop:FriendlyName="Final_Result" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ApplyDate" msprop:design-time-name="30257669-aad1-493c-83f0-15b0cb500344" msprop:DbColumnName="ApplyDate" msprop:FriendlyName="ApplyDate" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="AI_Cluster_Group" msprop:design-time-name="54d2ab6d-44fe-45cc-a426-6420d92ed34d" msprop:DbColumnName="AI_Cluster_Group" msprop:FriendlyName="AI_Cluster_Group" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Fact_Candidate_Skills" msprop:design-time-name="a01ee4d0-f973-44d3-9606-a044b55a17aa" msprop:FriendlyName="Fact_Candidate_Skills" msprop:DbSchemaName="dbo" msprop:DbTableName="Fact_Candidate_Skills" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CandidateID" msprop:design-time-name="53aa5c63-7123-441c-b377-60415e7e4754" msprop:DbColumnName="CandidateID" msprop:FriendlyName="CandidateID" type="xs:int" />
+                  <xs:element name="SkillID" msprop:design-time-name="8ebc109e-103d-4b02-b036-e5ac75d6cbea" msprop:DbColumnName="SkillID" msprop:FriendlyName="SkillID" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Skills" msprop:design-time-name="41e9962b-7ffa-4fc7-9ef3-cee9f131337f" msprop:FriendlyName="Dim_Skills" msprop:DbSchemaName="dbo" msprop:DbTableName="Dim_Skills" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SkillID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="b1b57c26-bba4-4e01-af82-3cbd23f0e0fd" msprop:DbColumnName="SkillID" msprop:FriendlyName="SkillID" type="xs:int" />
+                  <xs:element name="SkillName" msprop:design-time-name="facb1e34-9b72-46c1-bc5e-ca3ce1f74b4d" msprop:DbColumnName="SkillName" msprop:FriendlyName="SkillName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SkillGroup" msprop:design-time-name="d7658759-3558-45a2-a4c5-822173355641" msprop:DbColumnName="SkillGroup" msprop:FriendlyName="SkillGroup" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Jobs" msprop:design-time-name="9ba725d1-a836-4633-a2ce-846790cdf9bc" msprop:FriendlyName="Dim_Jobs" msprop:DbSchemaName="dbo" msprop:DbTableName="Dim_Jobs" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="JobID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="c932238a-9b32-45f2-8316-2037073aff50" msprop:DbColumnName="JobID" msprop:FriendlyName="JobID" type="xs:int" />
+                  <xs:element name="JobTitle" msprop:design-time-name="eb4ad6d2-c162-4bce-b067-6f74c922545b" msprop:DbColumnName="JobTitle" msprop:FriendlyName="JobTitle">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MinExp_Required" msprop:design-time-name="3e42952b-71b9-4862-9575-34b84a56b7fd" msprop:DbColumnName="MinExp_Required" msprop:FriendlyName="MinExp_Required" type="xs:double" minOccurs="0" />
+                  <xs:element name="Salary_Offer" msprop:design-time-name="743dc5c9-eae1-4be2-8c3c-19b9c4974bf1" msprop:DbColumnName="Salary_Offer" msprop:FriendlyName="Salary_Offer" type="xs:double" minOccurs="0" />
+                  <xs:element name="Target_Degree" msprop:design-time-name="7e24fe35-7b7e-4599-9849-db660f16cfee" msprop:DbColumnName="Target_Degree" msprop:FriendlyName="Target_Degree" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="DIMENSION_CONTENT_ROWSET" msprop:design-time-name="30dbd6aa-85e6-4ac8-8f89-66cb3e20cd85" msprop:DataSourceID="." msprop:QueryDefinition="SELECT * FROM [Model_DT_Cube].DIMENSION_CONTENT">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ATTRIBUTE_NAME" msprop:design-time-name="8a06a721-fcb3-48b4-a4b0-01f4e3b6dd67" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_NAME" msprop:design-time-name="a2afdb3c-d824-46b3-9d78-630719e51f1e" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_TYPE" msprop:design-time-name="445ecc39-f506-4954-b0a2-f4e89015dca0" type="xs:int" minOccurs="0" />
+                  <xs:element name="NODE_GUID" msprop:design-time-name="d806ae9d-9816-4391-8e36-666f14181494" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_CAPTION" msprop:design-time-name="9d730bf9-c93f-428b-8e64-544cec4cae51" type="xs:string" minOccurs="0" />
+                  <xs:element name="CHILDREN_CARDINALITY" msprop:design-time-name="ac2f2553-bdc4-4d9b-84c7-a81a1eb03797" type="xs:unsignedInt" minOccurs="0" />
+                  <xs:element name="PARENT_UNIQUE_NAME" msprop:design-time-name="3b274641-257a-47db-901a-5a53c8c5ebbb" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_DESCRIPTION" msprop:design-time-name="ab2b13da-dca7-4639-b79d-7f1a685c23fe" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_RULE" msprop:design-time-name="c8972e57-e2a6-4846-94cc-bb6309c91de0" type="xs:string" minOccurs="0" />
+                  <xs:element name="MARGINAL_RULE" msprop:design-time-name="cd0c5100-9703-4285-864b-f9604072c476" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_PROBABILITY" msprop:design-time-name="dcf0a9ad-ce04-422d-93bd-0ff2b78d1e70" type="xs:double" minOccurs="0" />
+                  <xs:element name="MARGINAL_PROBABILITY" msprop:design-time-name="2e81af4d-efb5-46e7-a2a4-fa5d9498c240" type="xs:double" minOccurs="0" />
+                  <xs:element name="NODE_SUPPORT" msprop:design-time-name="c3320aee-eca9-41a4-b8fb-741f1fd1e2c9" type="xs:double" minOccurs="0" />
+                  <xs:element name="MSOLAP_MODEL_COLUMN" msprop:design-time-name="b6b5f373-8ce1-4c07-b07d-65fc945977fe" type="xs:string" minOccurs="0" />
+                  <xs:element name="MSOLAP_NODE_SCORE" msprop:design-time-name="946ed802-e663-4523-967d-346198cdc61a" type="xs:double" minOccurs="0" />
+                  <xs:element name="MSOLAP_NODE_SHORT_CAPTION" msprop:design-time-name="c4e14fae-5933-4b0e-9ac2-f656a344d45f" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_UNIQUE_NAME" msprop:design-time-name="9db76d22-b85f-4cd9-9605-5edc84a5fd58" type="xs:string" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Candidates" />
+          <xs:field xpath="CandidateID" />
+        </xs:unique>
+        <xs:unique name="dbo_Fact_Applications_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Fact_Applications" />
+          <xs:field xpath="ApplicationID" />
+        </xs:unique>
+        <xs:unique name="dbo_Fact_Candidate_Skills_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Fact_Candidate_Skills" />
+          <xs:field xpath="CandidateID" />
+          <xs:field xpath="SkillID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Skills_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Skills" />
+          <xs:field xpath="SkillID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Jobs_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Jobs" />
+          <xs:field xpath="JobID" />
+        </xs:unique>
+        <xs:keyref name="FK__Fact_Cand__Skill__778AC167" refer="dbo_Dim_Skills_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Candidate_Skills" />
+          <xs:field xpath="SkillID" />
+        </xs:keyref>
+        <xs:keyref name="FK__Fact_Cand__Candi__76969D2E" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Candidate_Skills" />
+          <xs:field xpath="CandidateID" />
+        </xs:keyref>
+        <xs:keyref name="FK__Fact_Appl__Candi__7B5B524B" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Applications" />
+          <xs:field xpath="CandidateID" />
+        </xs:keyref>
+        <xs:keyref name="FK__Fact_Appl__JobID__7C4F7684" refer="dbo_Dim_Jobs_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Applications" />
+          <xs:field xpath="JobID" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Recruitment_N xmlns="" />
+  </Schema>
+</DataSourceView>

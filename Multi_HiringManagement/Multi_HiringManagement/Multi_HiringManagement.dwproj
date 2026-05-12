@@ -6,6 +6,40 @@
     <Name>Multi_HiringManagement.database</Name>
     <FullPath>Multi_HiringManagement.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Recruitment_Cube.cube</Name>
+      <FullPath>Recruitment_Cube.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Recruitment_Cube.partitions</Name>
+          <FullPath>Recruitment_Cube.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim_Candidates.dim</Name>
+      <FullPath>Dim_Candidates.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fact_Applications.dim</Name>
+      <FullPath>Fact_Applications.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim_Skills.dim</Name>
+      <FullPath>Dim_Skills.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim_Jobs.dim</Name>
+      <FullPath>Dim_Jobs.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim_DT_AI.dim</Name>
+      <FullPath>Dim_DT_AI.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>Recruitment.ds</Name>
@@ -16,6 +50,14 @@
     <ProjectItem>
       <Name>Recruitment.dsv</Name>
       <FullPath>Recruitment.dsv</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Recruitment_N.dsv</Name>
+      <FullPath>Recruitment_N.dsv</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim_DT_AI_DMDSV.dsv</Name>
+      <FullPath>Dim_DT_AI_DMDSV.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <MiningModels>
@@ -34,6 +76,18 @@
     <ProjectItem>
       <Name>Candidate_Structure_LR.dmm</Name>
       <FullPath>Candidate_Structure_LR.dmm</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Structure_Cluster_Cube.dmm</Name>
+      <FullPath>Structure_Cluster_Cube.dmm</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Structure_LR_Cube.dmm</Name>
+      <FullPath>Structure_LR_Cube.dmm</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Structure_DT_AI.dmm</Name>
+      <FullPath>Structure_DT_AI.dmm</FullPath>
     </ProjectItem>
   </MiningModels>
   <Configurations>

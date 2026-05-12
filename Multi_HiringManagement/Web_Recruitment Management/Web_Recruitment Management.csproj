@@ -107,11 +107,14 @@
   <ItemGroup>
     <Content Include="CandidateFiltering.aspx" />
     <Content Include="CandidateList.aspx" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="FinalResultList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\XuLyDuLieu.cs" />
+    <Compile Include="App_Code\XuLyDuLieu_AI.cs" />
+    <Compile Include="App_Code\XuLyDuLieu_UngVien.cs" />
     <Compile Include="CandidateFiltering.aspx.cs">
       <DependentUpon>CandidateFiltering.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -125,6 +128,13 @@
     </Compile>
     <Compile Include="CandidateList.aspx.designer.cs">
       <DependentUpon>CandidateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="FinalResultList.aspx.cs">
       <DependentUpon>FinalResultList.aspx</DependentUpon>

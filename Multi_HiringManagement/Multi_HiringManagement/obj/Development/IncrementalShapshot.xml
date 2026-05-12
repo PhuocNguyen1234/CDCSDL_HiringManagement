@@ -26,9 +26,65 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>XGoPYI0lfwIuL2acBg1NEP+tgCg=5/5/2026 4:53:57 PM4/30/2026 3:35:38 PM</TimeStamp>
+        <TimeStamp>lL4cI3BqTfiajXgUCdLAPE6pvn8=5/11/2026 10:40:56 AM4/30/2026 3:35:38 PM</TimeStamp>
         <ID>
           <String>Recruitment</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>lEJCd+ROE4yyaofvQgHJsL1QBCs=5/11/2026 11:33:06 PM5/11/2026 10:42:53 AM</TimeStamp>
+        <ID>
+          <String>Recruitment_N</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>ioeJloh/8oJZBDfkYsFyFe2nt2s=5/11/2026 11:57:25 PM5/11/2026 11:57:25 PM</TimeStamp>
+        <ID>
+          <String>Dim_DT_AI_DMDSV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>hiqUzp0yAgyuIg8R+ij4OC5pMPM=5/11/2026 9:56:03 PM5/11/2026 10:48:40 AM</TimeStamp>
+        <ID>
+          <String>Dim_Candidates</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/LJXFmq8oErClsEzZyopsStoT8U=5/11/2026 9:38:04 PM5/11/2026 10:49:54 AM</TimeStamp>
+        <ID>
+          <String>Fact_Applications</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>zB8H/DBt1k+8vwIJeCDvl1kiiAc=5/11/2026 9:56:03 PM5/11/2026 10:51:03 AM</TimeStamp>
+        <ID>
+          <String>Dim_Skills</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>eepK3iI/4Mb9IweaHBAlQruoJJs=5/11/2026 11:15:09 PM5/11/2026 10:51:43 AM</TimeStamp>
+        <ID>
+          <String>Dim_Jobs</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Mj1bYj9B4bzRq8bp1j3I/rJK4EQ=5/12/2026 12:02:32 AM5/11/2026 11:57:25 PM</TimeStamp>
+        <ID>
+          <String>Dim_DT_AI</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>+sJYuOB1c50HDAQUlDu31j90zgs=5/12/2026 3:24:54 PM5/11/2026 10:58:03 AMvMAjXe5Yn2GZGuF7U/wgqY2u5xc=5/11/2026 10:58:03 AM5/11/2026 10:58:03 AM</TimeStamp>
+        <ID>
+          <String>Recruitment_Cube</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
@@ -54,9 +110,30 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>Gky+0yuBstyD2LNmfTg57ltZop8=5/9/2026 2:46:36 PM5/9/2026 2:46:36 PM</TimeStamp>
+        <TimeStamp>Gky+0yuBstyD2LNmfTg57ltZop8=5/11/2026 2:14:53 PM5/11/2026 2:14:53 PM</TimeStamp>
         <ID>
           <String>Candidate_Structure_LR</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>CNsabGt0II0OdQ0eIJuBdNdba+8=5/11/2026 2:45:48 PM5/11/2026 2:45:48 PM</TimeStamp>
+        <ID>
+          <String>Structure_Cluster_Cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>y7P1Luch+gw0f+dvyIogs4izx88=5/11/2026 2:48:40 PM5/11/2026 2:48:40 PM</TimeStamp>
+        <ID>
+          <String>Structure_LR_Cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>/mAAnBeVVlHrBBcxvYckAn0gY4I=5/11/2026 11:57:25 PM5/11/2026 11:57:25 PM</TimeStamp>
+        <ID>
+          <String>Structure_DT_AI</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -71,5 +148,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-05-09T07:47:29.653333Z</LastDeployed>
+  <LastDeployed>2026-05-12T08:32:36.7Z</LastDeployed>
 </DeploymentSnapshot>

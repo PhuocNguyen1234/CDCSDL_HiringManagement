@@ -318,7 +318,7 @@ namespace Web_Recruitment_Management
                         break;
                 }
 
-                lblStatus.Text = "Phân loại AI: " + clusterName;
+                lblStatus.Text = "Phân loại: " + clusterName;
                 lblStatus.CssClass = cssClass;
 
                 hdfCluster.Value = clusterName;

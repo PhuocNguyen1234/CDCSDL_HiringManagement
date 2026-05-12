@@ -1,0 +1,171 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="bb95db87-5381-4997-8f7a-4a47827a67b2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Structure_Cluster_Cube</ID>
+  <Name>Structure_Cluster_Cube</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>MDXFilterComponent</Name>
+      <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition" /&gt;&lt;/Filter&gt;</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="CubeDimensionBinding" dwd:design-time-name="46ecaea6-84b2-40e0-95dc-591b714f0744">
+    <DataSourceID>.</DataSourceID>
+    <CubeID>Recruitment_Cube</CubeID>
+    <CubeDimensionID>Fact_Applications</CubeDimensionID>
+    <Filter></Filter>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="26618b70-5d3b-42d4-bc66-a92fa279dc79">
+      <ID>Application ID</ID>
+      <Name>Application ID</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="73bc2df6-9b75-4b8d-95b9-c48d32e7aa16">
+        <CubeID>Recruitment_Cube</CubeID>
+        <CubeDimensionID>Fact_Applications</CubeDimensionID>
+        <AttributeID>Application ID</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Key</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1466653f-3122-4dab-83ab-f722153ea627">
+      <ID>Candidate ID</ID>
+      <Name>Candidate ID</Name>
+      <Type>Long</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="e55eadf9-0f26-4505-9758-caeac9056dfb">
+        <CubeID>Recruitment_Cube</CubeID>
+        <CubeDimensionID>Fact_Applications</CubeDimensionID>
+        <AttributeID>Candidate ID</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0ff2c551-a428-4529-a4c9-acc31ff2b574">
+      <ID>GPA</ID>
+      <Name>GPA</Name>
+      <Type>Double</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="11d32016-a253-40b6-8a76-ca79db1dedad">
+        <CubeID>Recruitment_Cube</CubeID>
+        <CubeDimensionID>Fact_Applications</CubeDimensionID>
+        <AttributeID>GPA</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="018b1bf3-8f40-4fdb-8f50-7c362ef9a735">
+      <ID>Placement Status</ID>
+      <Name>Placement Status</Name>
+      <Type>Text</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="1b9cf0a1-c655-4c64-84a5-b1864ce324e2">
+        <CubeID>Recruitment_Cube</CubeID>
+        <CubeDimensionID>Fact_Applications</CubeDimensionID>
+        <AttributeID>Placement Status</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Discrete</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6ee6fa15-a9a1-4765-8d1d-207a29bde2be">
+      <ID>Projects Count</ID>
+      <Name>Projects Count</Name>
+      <Type>Double</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="478a98e5-168f-4fdb-b8c8-eaba2b01c6e2">
+        <CubeID>Recruitment_Cube</CubeID>
+        <CubeDimensionID>Fact_Applications</CubeDimensionID>
+        <AttributeID>Projects Count</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6373bef3-3cf1-49ce-8b96-1ae28928da1f">
+      <ID>Years Of Experience</ID>
+      <Name>Years Of Experience</Name>
+      <Type>Double</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="cd8fe1c1-1857-4b9b-8ee2-a1ef6a4e8fa0">
+        <CubeID>Recruitment_Cube</CubeID>
+        <CubeDimensionID>Fact_Applications</CubeDimensionID>
+        <AttributeID>Years Of Experience</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="3877efff-cc6c-423c-acff-13a64a7b1648">
+      <ID>Model_Cluster_Cube</ID>
+      <Name>Model_Cluster_Cube</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="450c2522-64c1-4c98-a3d6-ced99a50a1b4">
+          <ID>Application ID</ID>
+          <Name>Application ID</Name>
+          <SourceColumnID>Application ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="185923d4-18e4-49ee-9189-9f884ef10dce">
+          <ID>GPA</ID>
+          <Name>GPA</Name>
+          <SourceColumnID>GPA</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="2aedcd96-b5b2-4ce1-b48a-bfd9af8c21bd">
+          <ID>Placement Status</ID>
+          <Name>Placement Status</Name>
+          <SourceColumnID>Placement Status</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="09f97237-0187-484e-aaef-c795472bbd54">
+          <ID>Projects Count</ID>
+          <Name>Projects Count</Name>
+          <SourceColumnID>Projects Count</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="b141010a-635b-43ca-853f-f1ad1d8b4f28">
+          <ID>Years Of Experience</ID>
+          <Name>Years Of Experience</Name>
+          <SourceColumnID>Years Of Experience</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

@@ -10,6 +10,23 @@
         </ImpersonationInfo>
       </DataSource>
     </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>Dim_Candidates</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Fact_Applications</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim_Skills</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim_Jobs</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim_DT_AI</ID>
+      </Dimension>
+    </Dimensions>
     <MiningStructures>
       <MiningStructure>
         <ID>Candidate</ID>
@@ -23,7 +40,39 @@
       <MiningStructure>
         <ID>Candidate_Structure_LR</ID>
       </MiningStructure>
+      <MiningStructure>
+        <ID>Structure_Cluster_Cube</ID>
+      </MiningStructure>
+      <MiningStructure>
+        <ID>Structure_LR_Cube</ID>
+      </MiningStructure>
+      <MiningStructure>
+        <ID>Structure_DT_AI</ID>
+      </MiningStructure>
     </MiningStructures>
+    <Cubes>
+      <Cube>
+        <ID>Recruitment_Cube</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Applications</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Applications</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Candidate Skills</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Candidate Skills</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
     <DataSourceImpersonationInfo>
       <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
       <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>

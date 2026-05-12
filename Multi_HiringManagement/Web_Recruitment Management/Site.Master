@@ -16,30 +16,84 @@
         .main-content { flex: 1; padding: 40px 0; }
         .footer { background-color: #212529; color: #adb5bd; padding: 20px 0; margin-top: auto; }
         .brand-text { letter-spacing: 1px; font-weight: 700; }
+
+        /* Style cho Sidebar Offcanvas */
+        .offcanvas { background-color: #1e3c72; color: white; width: 280px !important; border-right: 1px solid rgba(255,255,255,0.1); }
+        .offcanvas-header { border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.1); }
+        .sidebar-link { 
+            display: block; 
+            padding: 12px 20px; 
+            color: rgba(255,255,255,0.8); 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: all 0.3s; 
+            border-radius: 8px;
+            margin: 4px 10px;
+        }
+        .sidebar-link:hover { 
+            background-color: rgba(255,255,255,0.1); 
+            color: #ffc107; 
+            padding-left: 30px; 
+        }
+        .sidebar-link i { width: 25px; color: #ffc107; }
+        .sidebar-link.active { background-color: #ffc107; color: #1e3c72; }
+        .sidebar-link.active i { color: #1e3c72; }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server" class="d-flex flex-column flex-grow-1">
+        
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="sidebarMenuLabel">
+                    <i class="fas fa-th-large me-2"></i>MENU HỆ THỐNG
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-0 pt-3">
+                <div class="px-3 mb-3 small text-uppercase opacity-50" style="letter-spacing: 1px;">Phân tích & Thống kê</div>
+                
+                <a href="Dashboard.aspx" class="sidebar-link">
+                    <i class="fas fa-chart-line"></i> Dashboard Tổng quan
+                </a>
+
+                <div class="px-3 mt-4 mb-3 small text-uppercase opacity-50" style="letter-spacing: 1px;">Nghiệp vụ Tuyển dụng</div>
+                
+                <a href="CandidateFiltering.aspx" class="sidebar-link">
+                    <i class="fas fa-filter"></i> Đánh giá hồ sơ AI
+                </a>
+                <a href="CandidateList.aspx" class="sidebar-link">
+                    <i class="fas fa-users"></i> Danh sách ứng viên
+                </a>
+                <a href="FinalResultList.aspx" class="sidebar-link">
+                    <i class="fas fa-trophy"></i> Kết quả tuyển dụng
+                </a>
+
+                <div class="mt-auto p-4">
+                    <div class="alert alert-warning border-0 bg-opacity-10 text-white small" style="background-color: rgba(255,193,7,0.1)">
+                        <i class="fas fa-shield-alt me-1"></i> Hệ thống đang chạy với dữ liệu từ Cube SSAS.
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
             <div class="container">
+                <button class="btn btn-outline-light me-3 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+
                 <a class="navbar-brand brand-text" href="CandidateFiltering.aspx">
                     <i class="fas fa-brain me-2"></i>RECRUITMENT AI
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="CandidateFiltering.aspx"><i class="fas fa-filter me-1"></i>Đánh giá hồ sơ</a>
-                        </li>
-                        <li class="nav-item ms-lg-3">
-                            <a class="nav-link" href="CandidateList.aspx"><i class="fas fa-list-ul me-1"></i>Danh sách ứng viên</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold text-success" href="FinalResultList.aspx"><i class="fas fa-trophy me-1"></i> Kết quả tuyển dụng</a>
-                        </li>
                         <li class="nav-item ms-lg-3">
                             <div class="nav-link text-info"><i class="fas fa-user-circle me-1"></i>Admin - UTE</div>
                         </li>
@@ -60,8 +114,8 @@
                     </div>
                     <div class="col-md-6 text-md-end">
                         <span class="me-3 small">Hệ thống Quản lý Tuyển dụng thông minh v2.0</span>
-                        <i class="fab fa-facebook-f me-2"></i>
-                        <i class="fab fa-github"></i>
+                        <i class="fab fa-facebook-f me-2 cursor-pointer"></i>
+                        <i class="fab fa-github cursor-pointer"></i>
                     </div>
                 </div>
             </div>
