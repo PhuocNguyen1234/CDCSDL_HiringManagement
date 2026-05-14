@@ -106,7 +106,7 @@ namespace Web_Recruitment_Management
                 string expStr = exp.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
                 string projectsStr = projects.ToString("0.0#", System.Globalization.CultureInfo.InvariantCulture);
 
-                Web_Recruitment_Management.App_Code.XuLyDuLieu db = new Web_Recruitment_Management.App_Code.XuLyDuLieu();
+                XuLyDuLieu db = new XuLyDuLieu();
 
                 // =========================================================
                 // DECISION TREE
@@ -163,6 +163,7 @@ namespace Web_Recruitment_Management
                 // =========================================================
                 // LOGISTIC REGRESSION (MÔ HÌNH SO SÁNH)
                 // =========================================================
+                double probLR = 0;
                 string dmxLR = $@"
                 SELECT 
                     Predict([Placement Status]) AS [Result], 
@@ -182,7 +183,10 @@ namespace Web_Recruitment_Management
                     DataTable dtLR = db.getPredicted(dmxLR);
                     if (dtLR != null && dtLR.Rows.Count > 0)
                     {
-                        double probLR = 0;
+                        if (dtLR.Rows[0]["Prob"] != DBNull.Value)
+                        {
+                            probLR = Convert.ToDouble(dtLR.Rows[0]["Prob"]);
+                        }
                         if (dtLR.Rows[0]["Prob"] != DBNull.Value)
                         {
                             probLR = Convert.ToDouble(dtLR.Rows[0]["Prob"]);
@@ -318,7 +322,8 @@ namespace Web_Recruitment_Management
                 lblStatus.CssClass = cssClass;
 
                 hdfCluster.Value = clusterName;
-                hdfStatus.Value = percentDT >= 50 ? "Placed" : "Not Placed";
+                string placementStatus = percentDT >= 50 ? "Placed" : "Not Placed";
+                hdfStatus.Value = $"{placementStatus}|{probLR.ToString(System.Globalization.CultureInfo.InvariantCulture)}";
             }
             catch (Exception ex)
             {

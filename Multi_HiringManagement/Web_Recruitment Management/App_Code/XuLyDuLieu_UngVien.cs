@@ -44,7 +44,7 @@ namespace Web_Recruitment_Management.App_Code
             {
                 string[] parts = status.Split('|');
                 placementStatus = parts[0];
-                double.TryParse(parts[1], out predictProb);
+                double.TryParse(parts[1], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out predictProb);
             }
 
             OleDbTransaction transaction = null;
@@ -183,6 +183,9 @@ namespace Web_Recruitment_Management.App_Code
                     C.FullName,  
                     C.Email, 
                     C.College_Name, 
+                    A.GPA,
+                    A.Years_Of_Experience,
+                    A.Projects_Count,
                     ISNULL(J.JobTitle, N'Chưa ứng tuyển') AS JobTitle,
                     
                     -- Dùng truy vấn con để gom tên kỹ năng lại
@@ -327,7 +330,7 @@ namespace Web_Recruitment_Management.App_Code
             {
                 string[] parts = status.Split('|');
                 placementStatus = parts[0];
-                double.TryParse(parts[1], out predictProb);
+                double.TryParse(parts[1], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out predictProb);
             }
 
             OleDbTransaction transaction = null;

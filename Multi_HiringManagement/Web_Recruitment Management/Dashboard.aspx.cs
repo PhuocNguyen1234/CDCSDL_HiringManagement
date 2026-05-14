@@ -18,7 +18,6 @@ namespace Web_Recruitment_Management
         [WebMethod]
         public static List<CollegePassResult> GetChartData()
         {
-            // Vì hàm này là static, ta phải khởi tạo đối tượng XuLyDuLieu mới dùng được
             XuLyDuLieu dataHelper = new XuLyDuLieu();
             return dataHelper.GetPassPredictionByCollege();
         }
@@ -26,11 +25,15 @@ namespace Web_Recruitment_Management
         [WebMethod]
         public static List<CollegeWeaknessResult> GetWeaknessData()
         {
-            // Khởi tạo class chứa hàm truy vấn MDX
             XuLyDuLieu xl = new XuLyDuLieu();
-
-            // Gọi hàm lấy dữ liệu điểm yếu mà chúng ta vừa viết lúc nãy
             return xl.GetCollegeWeaknessAnalysis();
+        }
+
+        [WebMethod]
+        public static List<CollegeSkillDNA> GetDNAChartData()
+        {
+            XuLyDuLieu dataHelper = new XuLyDuLieu();
+            return dataHelper.GetCollegeSkillDNA();
         }
     }
 }

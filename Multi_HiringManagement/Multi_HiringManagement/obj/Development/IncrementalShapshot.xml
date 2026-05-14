@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>Default</ProcessingOption>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -103,7 +103,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>vOVpzu+JV+pIIC9I5H6Wk8f1R0k=5/9/2026 12:22:18 PM4/30/2026 3:52:40 PM</TimeStamp>
+        <TimeStamp>CEdB+N2kLl0gk2g7gRfvoOA1mi0=5/13/2026 11:51:55 PM4/30/2026 3:52:40 PM</TimeStamp>
         <ID>
           <String>Candidate_Model_DT</String>
         </ID>
@@ -117,7 +117,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>Gky+0yuBstyD2LNmfTg57ltZop8=5/11/2026 2:14:53 PM5/11/2026 2:14:53 PM</TimeStamp>
+        <TimeStamp>UMlbeNHVU0/wUspM5M83FOh8FWQ=5/13/2026 11:51:55 PM5/11/2026 2:14:53 PM</TimeStamp>
         <ID>
           <String>Candidate_Structure_LR</String>
         </ID>
@@ -155,5 +155,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-05-12T09:54:01.926667Z</LastDeployed>
+  <LastDeployed>2026-05-13T16:52:09.113333Z</LastDeployed>
 </DeploymentSnapshot>

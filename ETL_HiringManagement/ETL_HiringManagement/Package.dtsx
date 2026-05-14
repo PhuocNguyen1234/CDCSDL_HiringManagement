@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{DE082149-CCDF-494F-A066-7EC4C300C208}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{9541FE38-4CF4-4248-8917-574878FFC698}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2571,12 +2571,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       cachedName="JobID"
                       externalMetadataColumnId="Package\Load_Fact_Applications\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[JobID]"
                       lineageId="Package\Load_Fact_Applications\Lookup Jobs.Outputs[Lookup Match Output].Columns[JobID]" />
-                    <inputColumn
-                      refId="Package\Load_Fact_Applications\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[salary]"
-                      cachedDataType="r8"
-                      cachedName="salary"
-                      externalMetadataColumnId="Package\Load_Fact_Applications\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Current_Salary]"
-                      lineageId="Package\Load_Fact_Applications\Excel Source.Outputs[Excel Source Output].Columns[salary]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2626,6 +2620,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       refId="Package\Load_Fact_Applications\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ApplyDate]"
                       dataType="dbTimeStamp"
                       name="ApplyDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load_Fact_Applications\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AI_Cluster_Group]"
+                      dataType="wstr"
+                      length="100"
+                      name="AI_Cluster_Group" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5635,26 +5634,26 @@ where [refTable].[SkillName] = ?</property>
     design-time-name="Package\Dim_Candidates">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\Dim_Candidates\Sort"
-          TopLeft="370.833333333333,158" />
+          TopLeft="387.833333333333,104" />
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\Dim_Candidates\Excel Source"
-          TopLeft="136,120" />
+          TopLeft="153,66" />
         <NodeLayout
           Size="178.4,41.6"
           Id="Package\Dim_Candidates\ADO NET Destination"
-          TopLeft="424.71428572645,277" />
+          TopLeft="441.71428572645,223" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Dim_Candidates\Data Conversion"
-          TopLeft="560.833333333333,204" />
+          TopLeft="577.833333333333,150" />
         <EdgeLayout
           Id="Package\Dim_Candidates.Paths[Sort Output]"
-          TopLeft="468.433333333333,178.8">
+          TopLeft="485.433333333333,124.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5683,14 +5682,12 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim_Candidates.Paths[Excel Source Output]"
-          TopLeft="274.4,140.8">
+          TopLeft="291.4,86.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5719,14 +5716,12 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim_Candidates.Paths[Data Conversion Output]"
-          TopLeft="638.433333333333,245.6">
+          TopLeft="655.433333333333,191.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5755,9 +5750,7 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5788,7 +5781,7 @@ where [refTable].[SkillName] = ?</property>
     design-time-name="Package\Dim_Skills">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Dim_Skills\Script Component"
@@ -5836,9 +5829,7 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5872,9 +5863,7 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5908,9 +5897,7 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5951,49 +5938,9 @@ where [refTable].[SkillName] = ?</property>
           Id="Package\Load_Fact_Applications\Excel Source"
           TopLeft="123.571430675838,107.823530923949" />
         <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\Load_Fact_Applications\ADO NET Destination"
-          TopLeft="516.428580223298,257.705885967169" />
-        <NodeLayout
           Size="167.2,41.6"
           Id="Package\Load_Fact_Applications\Lookup Candidates"
           TopLeft="369.285720574613,112.411766282415" />
-        <EdgeLayout
-          Id="Package\Load_Fact_Applications.Paths[Lookup Match Output1]"
-          TopLeft="668.400010217939,193.011766829375">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-62.7714299946409,64.694119137794"
-              Start="0,0"
-              End="-62.7714299946409,57.194119137794">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.347059568897" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.347059568897"
-                    Point2="0,32.347059568897"
-                    Point3="-4,32.347059568897" />
-                  <mssgle:LineSegment
-                    End="-58.7714299946409,32.347059568897" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-58.7714299946409,32.347059568897"
-                    Point2="-62.7714299946409,32.347059568897"
-                    Point3="-62.7714299946409,36.347059568897" />
-                  <mssgle:LineSegment
-                    End="-62.7714299946409,57.194119137794" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-79.5771017160705,37.347059568897,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load_Fact_Applications.Paths[Lookup Match Output]"
           TopLeft="536.485720574613,133.211766282415">
@@ -6052,6 +5999,46 @@ where [refTable].[SkillName] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Load_Fact_Applications\ADO NET Destination"
+          TopLeft="315.000005364418,242.752943257065" />
+        <EdgeLayout
+          Id="Package\Load_Fact_Applications.Paths[Lookup Match Output1]"
+          TopLeft="668.400010217939,193.011766829375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-264.200004853521,49.7411764276895"
+              Start="0,0"
+              End="-264.200004853521,42.2411764276895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8705882138448" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.8705882138448"
+                    Point2="0,24.8705882138448"
+                    Point3="-4,24.8705882138448" />
+                  <mssgle:LineSegment
+                    End="-260.200004853521,24.8705882138448" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-260.200004853521,24.8705882138448"
+                    Point2="-264.200004853521,24.8705882138448"
+                    Point3="-264.200004853521,28.8705882138448" />
+                  <mssgle:LineSegment
+                    End="-264.200004853521,42.2411764276895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-180.29138914551,29.8705882138448,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -6088,14 +6075,6 @@ where [refTable].[SkillName] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load_Fact_Applications\ADO NET Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6186,9 +6165,7 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6222,9 +6199,7 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6324,9 +6299,7 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6360,9 +6333,7 @@ where [refTable].[SkillName] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6430,6 +6401,14 @@ where [refTable].[SkillName] = ?</property>
         <Value
           type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load_Fact_Applications\ADO NET Destination">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

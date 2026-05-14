@@ -136,7 +136,9 @@
                         <asp:TemplateField HeaderText="Tỉ lệ AI" HeaderStyle-Width="8%">
                             <ItemTemplate>
                                 <span class="badge bg-secondary">
-                                    <%# Eval("prob") != DBNull.Value && !string.IsNullOrEmpty(Eval("prob").ToString()) ? Eval("prob").ToString() + "%" : "Chưa có" %>
+                                    <%# Eval("prob") != DBNull.Value && !string.IsNullOrEmpty(Eval("prob").ToString()) 
+                                        ? (Convert.ToDouble(Eval("prob")) * 100).ToString("0.000") + "%" 
+                                        : "Chưa có" %>
                                 </span>
                             </ItemTemplate>
                         </asp:TemplateField>
